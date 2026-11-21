@@ -1,0 +1,98 @@
+.medical-coding-page > main > section:first-child {
+  display: grid;
+  min-height: calc(100svh - 73px);
+}
+
+.medical-coding-preview {
+  position: relative;
+  width: min(100%, 30rem);
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.medical-coding-preview::before {
+  position: absolute;
+  inset: auto 10% 4%;
+  height: 8%;
+  border-radius: 50%;
+  background: #75442d66;
+  filter: blur(16px);
+  content: '';
+}
+
+.medical-coding-preview__art {
+  position: relative;
+  animation: medical-coding-float 5s ease-in-out infinite;
+}
+
+.medical-coding-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 16px 14px #56351f66);
+}
+
+.medical-coding-preview__scan {
+  position: absolute;
+  left: 35%;
+  top: 39%;
+  width: 24%;
+  height: 1%;
+  border-radius: 1rem;
+  background: #fff4d3;
+  box-shadow: 0 0 8px 3px #eb945b99;
+  opacity: 0;
+  animation: medical-coding-scan 4s ease-in-out infinite;
+}
+
+.medical-coding-preview__screen {
+  position: absolute;
+  inset: 48% 4.5% 31% 74%;
+  transform: skew(-8deg) rotate(3deg);
+  pointer-events: none;
+}
+
+.medical-coding-preview__screen i {
+  display: block;
+  width: 75%;
+  height: 6%;
+  margin-bottom: 18%;
+  border-radius: 1rem;
+  background: #fff0d3;
+  box-shadow: 0 0 8px 2px #f49b69aa;
+  transform-origin: left;
+  animation: medical-coding-type 3.6s ease-in-out infinite;
+}
+
+.medical-coding-preview__screen i:nth-child(2) {
+  width: 55%;
+  animation-delay: .45s;
+}
+
+.medical-coding-preview__screen i:nth-child(3) {
+  width: 85%;
+  animation-delay: .9s;
+}
+
+@keyframes medical-coding-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes medical-coding-scan {
+  0%, 10% { top: 39%; opacity: 0; }
+  20% { opacity: .85; }
+  70% { opacity: .85; }
+  85%, 100% { top: 59%; opacity: 0; }
+}
+
+@keyframes medical-coding-type {
+  0%, 10% { opacity: 0; transform: scaleX(0); }
+  35%, 70% { opacity: .8; transform: scaleX(1); }
+  90%, 100% { opacity: 0; transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medical-coding-preview__art { animation: none; }
+  .medical-coding-preview__scan, .medical-coding-preview__screen { display: none; }
+}

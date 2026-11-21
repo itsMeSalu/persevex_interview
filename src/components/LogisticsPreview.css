@@ -1,0 +1,96 @@
+.logistics-preview {
+  position: relative;
+  width: min(100%, 33rem);
+  min-width: 0;
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.logistics-preview__motion {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.logistics-preview__motion span {
+  position: absolute;
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+
+.logistics-preview__signal {
+  width: 1.3%;
+  aspect-ratio: 1;
+  background: #fffbdf;
+  box-shadow: 0 0 5px 2px #ffbe69, 0 0 13px 4px #ff912b88;
+  animation: logistics-freight-route 4.6s linear infinite;
+}
+
+.logistics-preview__signal--trail {
+  width: 0.8%;
+  animation-delay: -0.16s;
+}
+
+.logistics-preview__wing-light {
+  top: 26%;
+  left: 3%;
+  width: 1%;
+  aspect-ratio: 1;
+  background: #fff1dc;
+  box-shadow: 0 0 7px 2px #ff5633;
+  animation: logistics-wing-strobe 2.8s linear infinite;
+}
+
+.logistics-preview__dock-light {
+  top: 50.8%;
+  left: 63.8%;
+  width: 3%;
+  height: 2%;
+  background: radial-gradient(ellipse, #fff0b9, #ffa24777 45%, transparent 73%);
+  mix-blend-mode: screen;
+  animation: logistics-light-glow 4s ease-in-out infinite alternate;
+}
+
+.logistics-preview__truck-light {
+  top: 82.5%;
+  left: 48.2%;
+  width: 3.4%;
+  height: 2.8%;
+  background: radial-gradient(ellipse, #fff8df, #ffcf7c88 38%, transparent 72%);
+  mix-blend-mode: screen;
+  animation: logistics-light-glow 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes logistics-freight-route {
+  0% { left: 62.3%; top: 17.4%; opacity: 0; }
+  8% { opacity: 1; }
+  18% { left: 56.1%; top: 21.5%; }
+  34% { left: 50.8%; top: 25.9%; }
+  51% { left: 45.7%; top: 31.4%; }
+  67% { left: 41.2%; top: 38.3%; }
+  76% { opacity: 1; }
+  84%, 100% { left: 38.3%; top: 45.5%; opacity: 0; }
+}
+
+@keyframes logistics-wing-strobe {
+  0%, 7%, 14%, 100% { opacity: 0; }
+  3%, 10% { opacity: 1; }
+}
+
+@keyframes logistics-light-glow {
+  from { opacity: 0.2; }
+  to { opacity: 0.95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logistics-preview__motion {
+    display: none;
+  }
+}
+
+.logistics-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 9px 7px #47302224);
+}

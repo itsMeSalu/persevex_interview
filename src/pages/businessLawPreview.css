@@ -1,0 +1,51 @@
+.law-preview {
+  position: relative;
+  width: min(100%, 31rem);
+  aspect-ratio: 1.15;
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.law-preview__orbit {
+  position: absolute;
+  inset: 8% 13% 12%;
+  border-radius: 50%;
+  background: #fdf5ee;
+}
+
+.law-preview img {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 7px #47302220);
+}
+
+.law-preview__scales {
+  width: 53%;
+  height: 68%;
+  top: 3%;
+  left: 24%;
+  animation: law-float 5s ease-in-out infinite;
+}
+
+.law-preview__contract {
+  width: 38%;
+  height: 43%;
+  left: 4%;
+  bottom: 3%;
+}
+
+.law-preview__books {
+  width: 39%;
+  height: 36%;
+  right: 3%;
+  bottom: 3%;
+}
+
+@keyframes law-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .law-preview__scales { animation: none; }
+}

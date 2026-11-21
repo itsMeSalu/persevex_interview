@@ -1,0 +1,90 @@
+.iot-telemetry {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 34rem);
+  aspect-ratio: 1.4;
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.iot-telemetry-node {
+  position: absolute;
+  z-index: 1;
+  left: var(--x);
+  top: var(--y);
+  width: var(--width);
+  height: auto;
+  translate: -50% -50%;
+  filter: drop-shadow(0 8px 6px #38251c34);
+}
+
+.iot-telemetry-sensor { --x: 16%; --y: 75%; --width: 27%; }
+.iot-telemetry-board { --x: 48%; --y: 79%; --width: 27%; }
+.iot-telemetry-gateway { --x: 55%; --y: 48%; --width: 30%; }
+.iot-telemetry-console { --x: 78%; --y: 20%; --width: 44%; }
+
+.iot-telemetry-link {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--length);
+  height: 2px;
+  rotate: var(--angle);
+  transform-origin: left center;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #b57b5a, #dfb49b);
+}
+
+.iot-telemetry-sensor-link { --x: 16%; --y: 75%; --length: 32.1%; --angle: 5.1deg; }
+.iot-telemetry-board-link { --x: 48%; --y: 79%; --length: 23.2%; --angle: -72.4deg; }
+.iot-telemetry-console-link { --x: 55%; --y: 48%; --length: 30.5%; --angle: -41deg; }
+
+.iot-telemetry-link i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: clamp(6px, 1.3vw, 10px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1px solid #db8c60;
+  border-radius: 50%;
+  background: #fff8e4;
+  box-shadow: 0 0 0 3px #eaa07855, 0 0 12px #df8c60;
+  opacity: 0;
+}
+
+.iot-telemetry-hub-ring {
+  position: absolute;
+  left: 55%;
+  top: 53%;
+  width: 36%;
+  height: 23%;
+  translate: -50% -50%;
+  border: 1px solid #cfb29c6b;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #ead9cc42;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .iot-telemetry-link i { animation: iot-telemetry-packet 5.2s linear infinite; }
+  .iot-telemetry-board-link i { animation-delay: 1.2s; }
+  .iot-telemetry-console-link i { animation-delay: 2.4s; }
+  .iot-telemetry-hub-ring { animation: iot-telemetry-ring 5.2s ease-out infinite; }
+  .iot-telemetry-console { animation: iot-telemetry-update 5.2s ease-out infinite; }
+}
+
+@keyframes iot-telemetry-packet {
+  0% { left: 0%; opacity: 0; }
+  4%, 18% { opacity: 1; }
+  23%, 100% { left: 100%; opacity: 0; }
+}
+
+@keyframes iot-telemetry-ring {
+  0%, 34%, 70%, 100% { opacity: 0.4; scale: 1; }
+  52% { opacity: 1; scale: 1.12; }
+}
+
+@keyframes iot-telemetry-update {
+  0%, 61%, 92%, 100% { filter: drop-shadow(0 8px 6px #38251c34); }
+  74% { filter: drop-shadow(0 8px 6px #38251c34) drop-shadow(0 0 8px #84a98e8c); }
+}

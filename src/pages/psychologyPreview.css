@@ -1,0 +1,73 @@
+.psychology-page > main > section:first-child {
+  display: grid;
+  min-height: calc(100svh - 73px);
+}
+
+.psychology-preview {
+  position: relative;
+  width: min(100%, 30rem);
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.psychology-preview::before {
+  position: absolute;
+  inset: auto 12% 5% 12%;
+  height: 8%;
+  border-radius: 50%;
+  background: #75442d4d;
+  filter: blur(16px);
+  content: '';
+}
+
+.psychology-preview__art {
+  position: relative;
+  animation: psychology-float 5s ease-in-out infinite;
+}
+
+.psychology-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 14px 12px #56351f55);
+}
+
+.psychology-preview__signals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.psychology-preview__signals i {
+  position: absolute;
+  width: 2%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff3cc;
+  box-shadow: 0 0 5px 2px #ffc77c, 0 0 14px 5px #ed8c4a99;
+  transform: translate(-50%, -50%);
+  animation: psychology-signal 3s ease-in-out infinite;
+}
+
+.psychology-preview__signals i:nth-child(1) { left: 19%; top: 36%; animation-delay: 0s; }
+.psychology-preview__signals i:nth-child(2) { left: 24%; top: 46%; animation-delay: .35s; }
+.psychology-preview__signals i:nth-child(3) { left: 31%; top: 56%; animation-delay: .7s; }
+.psychology-preview__signals i:nth-child(4) { left: 44%; top: 64%; animation-delay: 1.05s; }
+.psychology-preview__signals i:nth-child(5) { left: 74%; top: 68%; animation-delay: 1.4s; }
+.psychology-preview__signals i:nth-child(6) { left: 82%; top: 63%; animation-delay: 1.75s; }
+
+@keyframes psychology-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes psychology-signal {
+  0%, 100% { opacity: .15; scale: .6; }
+  25% { opacity: 1; scale: 1.2; }
+  50% { opacity: .2; scale: .7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .psychology-preview__art, .psychology-preview__signals i { animation: none; }
+  .psychology-preview__signals { display: none; }
+}

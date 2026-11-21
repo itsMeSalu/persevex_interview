@@ -1,0 +1,122 @@
+.data-workflow {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 36rem;
+  margin-inline: auto;
+  scale: -1 1;
+  scroll-margin-top: 1.5rem;
+}
+
+.data-workflow > img { display: block; width: 100%; height: auto; }
+
+.data-workflow-sheet,
+.data-workflow-points,
+.data-workflow-trend {
+  position: absolute;
+  pointer-events: none;
+}
+
+.data-workflow-sheet {
+  inset: 42% 78.3% 18% 3.05%;
+  transform: skewY(-11deg);
+  overflow: hidden;
+}
+
+.data-workflow-sheet span {
+  position: absolute;
+  inset: 6% 0 auto;
+  height: 24%;
+  border-block: 1px solid #e99960;
+  background: linear-gradient(transparent, #ffb477cc, transparent);
+  opacity: 0;
+}
+
+.data-workflow-sheet span {
+  animation: data-workflow-scan 4.8s ease-in-out infinite;
+}
+
+.data-workflow-points,
+.data-workflow-trend { inset: 0; }
+
+.data-workflow-points i,
+.data-workflow-trend i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: clamp(6px, 1vw, 13px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  border: 1px solid #fff5e6;
+  border-radius: 50%;
+  background: #c56434;
+  box-shadow: 0 0 0 3px #f8c19888, 0 0 12px #e88b55;
+  opacity: 0;
+}
+
+.data-workflow-points i:nth-child(1) { --x: 36.15%; --y: 54%; }
+.data-workflow-points i:nth-child(2) { --x: 39%; --y: 48%; }
+.data-workflow-points i:nth-child(3) { --x: 42.4%; --y: 45.4%; }
+.data-workflow-points i:nth-child(4) { --x: 46%; --y: 38.1%; }
+.data-workflow-points i:nth-child(5) { --x: 49.4%; --y: 30%; }
+
+.data-workflow-trend i {
+  background: #598461;
+  box-shadow: 0 0 0 3px #b4d5a99c, 0 0 12px #83a57c;
+}
+
+.data-workflow-trend i:nth-of-type(1) { --x: 82.35%; --y: 26.7%; }
+.data-workflow-trend i:nth-of-type(2) { --x: 86.3%; --y: 22.4%; }
+.data-workflow-trend i:nth-of-type(3) { --x: 92.4%; --y: 17%; }
+.data-workflow-trend i:nth-of-type(4) { --x: 97.65%; --y: 11.25%; }
+
+.data-workflow-points i {
+  animation: data-workflow-point 4.8s ease-out calc(1.3s + var(--delay, 0ms)) infinite;
+}
+
+.data-workflow-trend i {
+  animation: data-workflow-point 4.8s ease-out calc(2.65s + var(--delay, 0ms)) infinite;
+}
+
+.data-workflow-trend span {
+  position: absolute;
+  inset: 9% 2% 62% 78.5%;
+  clip-path: polygon(0 90%, 14% 62%, 22% 67%, 36% 47%, 47% 58%, 59% 39%, 69% 20%, 78% 30%, 100% 1%, 100% 63%, 0 100%);
+  background: linear-gradient(90deg, #89b28200, #8fbf858c, #89b28200) no-repeat;
+  background-size: 55% 100%;
+  opacity: 0;
+  animation: data-workflow-trend-sweep 4.8s ease-in-out infinite;
+}
+
+.data-workflow-points i:nth-child(2),
+.data-workflow-trend i:nth-of-type(2) { --delay: 130ms; }
+.data-workflow-points i:nth-child(3),
+.data-workflow-trend i:nth-of-type(3) { --delay: 260ms; }
+.data-workflow-points i:nth-child(4),
+.data-workflow-trend i:nth-of-type(4) { --delay: 390ms; }
+.data-workflow-points i:nth-child(5) { --delay: 520ms; }
+
+@keyframes data-workflow-scan {
+  0% { opacity: 0; top: 0; }
+  6%, 22% { opacity: 1; }
+  31%, 100% { opacity: 0; top: 78%; }
+}
+
+@keyframes data-workflow-point {
+  0% { opacity: 0; scale: 0.65; }
+  5% { opacity: 1; scale: 1.4; }
+  11% { opacity: 0.9; scale: 1; }
+  20%, 100% { opacity: 0; scale: 1; }
+}
+
+@keyframes data-workflow-trend-sweep {
+  0%, 52% { background-position: -100% 0; opacity: 0; }
+  60%, 75% { opacity: 1; }
+  88%, 100% { background-position: 200% 0; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .data-workflow :is(.data-workflow-sheet span, .data-workflow-points i, .data-workflow-trend span, .data-workflow-trend i) {
+    animation: none;
+  }
+}

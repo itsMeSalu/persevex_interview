@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./dm-sans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+:root {
+  --brand-ink: #963d26;
+  --gradient-ivory: #fffaf2;
+  --gradient-apricot: #f6c9a3;
+  --gradient-champagne: #f9e4bf;
+  --gradient-rose: #efd4cf;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--brand-ink);
+  outline-offset: 4px;
+}
+
+.nav-link {
+  transition: color 180ms ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-ink);
+}
+
+.page-width {
+  width: min(89%, 100rem);
+  margin-inline: auto;
+}
+
+
+.hero-transition {
+  background:
+    radial-gradient(ellipse 123% 29% at -9% 57%, #7cc8fc94 0%, #b4dfff82 32%, #d8eeff44 65%, transparent 91%),
+    #fff;
+}
+
+@media (width < 64rem) {
+  .hero-transition {
+    background:
+      radial-gradient(ellipse 140% 24% at -15% 63%, #7cc8fc85 0%, #b4dfff73 33%, #d8eeff44 65%, transparent 91%),
+      #fff;
+  }
+}
+
+.hero-gradient {
+  position: relative;
+  isolation: isolate;
+  background: #fff;
+}
+
+.hero-gradient::before,
+.hero-gradient::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: min(50rem, 100%);
+  pointer-events: none;
+  content: "";
+}
+
+.hero-gradient::before {
+  background-image:
+    radial-gradient(ellipse at center, var(--gradient-apricot) 0%, var(--gradient-champagne) 38%, transparent 72%),
+    radial-gradient(ellipse at center, var(--gradient-champagne) 0%, var(--gradient-ivory) 43%, transparent 72%),
+    radial-gradient(ellipse at center, var(--gradient-rose) 0%, transparent 72%),
+    linear-gradient(180deg, var(--gradient-ivory) 0%, #fff 100%);
+  background-repeat: no-repeat;
+  background-size: 74% 137%, 89% 124%, 73% 83%, 100% 100%;
+  mask-image: linear-gradient(#000 28%, #000c 53%, transparent 100%);
+  animation: gradient-current 10s linear infinite;
+}
+
+.hero-gradient::after {
+  background-image:
+    radial-gradient(ellipse at center, var(--gradient-ivory) 0%, transparent 70%),
+    radial-gradient(ellipse at center, #efd4cf99 0%, transparent 68%),
+    radial-gradient(ellipse at center, var(--gradient-ivory) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-size: 30% 142%, 29% 120%, 29% 129%;
+  mask-image: linear-gradient(#000 8%, #0007 49%, transparent 83%);
+  animation: gradient-ribbons 10s linear infinite;
+}
+
+@keyframes gradient-current {
+  0%, 100% { background-position: 224% 85%, 99% 106%, -85% -215%, 0 0; }
+  18% { background-position: 221% 96%, 40% 120%, -80% -175%, 0 0; }
+  42% { background-position: -52% 160%, 177% 112%, 138% -196%, 0 0; }
+  62% { background-position: -109% 130%, 194% 87%, 196% -147%, 0 0; }
+  82% { background-position: 92% 99%, -26% 94%, 49% -166%, 0 0; }
+}
+
+@keyframes gradient-ribbons {
+  0%, 100% { background-position: 89% 109%, 84% 160%, 17% 124%; }
+  23% { background-position: 76% 113%, 99% 134%, 5% 148%; }
+  50% { background-position: 48% 133%, 19% 182%, 55% 103%; }
+  75% { background-position: 14% 98%, 53% 166%, 73% 151%; }
+}
+
+.brand-gradient-text {
+  width: fit-content;
+  color: transparent;
+  background: linear-gradient(135deg in srgb, #f79422, #fa7405, #f54700);
+  background-clip: text;
+}
+
+@media (forced-colors: active) {
+  .brand-gradient-text {
+    color: CanvasText;
+    background: none;
+  }
+}
+
+.hero-title,
+.hero-copy,
+.platform-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 3.8vw, 4.35rem);
+  line-height: 1.14;
+  letter-spacing: -0.06em;
+}
+
+.hero-copy {
+  color: #595048;
+  font-size: clamp(1.3rem, 2.18vw, 2.45rem);
+  line-height: 1.35;
+  letter-spacing: -0.045em;
+}
+
+.platform-title {
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+}
+
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  min-height: 3rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background-color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.hero-action-primary {
+  background: #101010;
+  box-shadow: inset 0 0 10px #ffffff51;
+  color: #fff;
+}
+
+.hero-action-primary:hover {
+  background: #27221f;
+  box-shadow: inset 0 0 10px #ffffff65;
+}
+
+.hero-action-secondary {
+  border-color: #222;
+  background-color: #fff;
+}
+
+.hero-action-secondary:hover {
+  background-color: var(--gradient-ivory);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-gradient::before,
+  .hero-gradient::after {
+    animation-play-state: paused;
+  }
+
+  .hero-action,
+  .nav-link {
+    transition: none;
+  }
+}
+
+.company-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.company-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: company-marquee 26s linear infinite;
+}
+
+.company-marquee:hover .company-marquee-track {
+  animation-play-state: paused;
+}
+
+.company-marquee-track ul {
+  display: flex;
+}
+
+.company-marquee-track li {
+  display: grid;
+  width: clamp(8.5rem, 15vw, 14.5rem);
+  place-items: center;
+}
+
+@keyframes company-marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-marquee {
+    mask-image: none;
+  }
+
+  .company-marquee-track {
+    width: 100%;
+    animation: none;
+  }
+
+  .company-marquee-track ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 0;
+    width: 100%;
+  }
+
+  .company-marquee-track .company-marquee-copy {
+    display: none;
+  }
+}
+
+.learner-stories-track,
+.learner-stories-row {
+  display: flex;
+  width: max-content;
+}
+
+.learner-stories-track {
+  animation: learner-stories-scroll 15s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.learner-stories-row {
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.learner-story-card {
+  width: clamp(16rem, 75vw, 25rem);
+  scale: calc(0.98 + 0.07 * var(--story-focus, 0.286));
+  border-color: color-mix(in srgb, #eee2d9, #e4a682 calc(var(--story-focus, 0) * 100%));
+  box-shadow: 0 8px 16px rgb(142 70 35 / calc(var(--story-focus, 0) * 0.12));
+}
+
+.learner-stories-window {
+  padding-block: 1rem;
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.learner-stories-window[data-paused="true"] .learner-stories-track,
+.learner-stories-window:focus-within .learner-stories-track {
+  animation-play-state: paused;
+}
+
+@keyframes learner-stories-scroll {
+  0%, 26% { transform: translateX(0); }
+  33.333%, 59.333% { transform: translateX(-16.6667%); }
+  66.667%, 92.667% { transform: translateX(-33.3333%); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (width < 768px) {
+  .learner-stories-window {
+    mask-image: none;
+  }
+
+  .learner-stories-row {
+    gap: 0;
+    padding-right: 0;
+  }
+
+  .learner-story-card {
+    width: 89vw;
+    scale: 1;
+  }
+}
+
+@media (width >= 768px) {
+  .learner-story-card {
+    width: min(28vw, 28rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learner-stories-track {
+    animation: none;
+  }
+
+  .learner-stories-window {
+    overflow-x: auto;
+    mask-image: none;
+  }
+
+  .learner-stories-copy {
+    display: none;
+  }
+}

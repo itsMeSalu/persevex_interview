@@ -1,0 +1,136 @@
+.marketing-preview {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 40rem);
+  margin-inline: auto;
+}
+
+.marketing-preview::before {
+  position: absolute;
+  z-index: -1;
+  inset: 88% 6% -4%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgb(76 48 33 / 29%), transparent 70%);
+  filter: blur(10px);
+  content: '';
+}
+
+.marketing-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.marketing-preview__chart,
+.marketing-preview__bars,
+.marketing-preview__donut,
+.marketing-preview__engagement,
+.marketing-preview__conversion {
+  position: absolute;
+  pointer-events: none;
+}
+
+.marketing-preview__bars {
+  left: 35.5%;
+  top: 21.5%;
+  width: 19.5%;
+  height: 16%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: end;
+  gap: 5%;
+  background: #3a332d;
+  border-bottom: 1px solid #a38871;
+  transform: rotate(8deg) skewX(2deg);
+}
+
+.marketing-preview__bars span {
+  height: var(--height);
+  border-radius: 10% 10% 0 0;
+  background: linear-gradient(105deg, #f0ad68, #c66829);
+  transform-origin: bottom;
+  animation: marketing-bars 2.8s var(--delay) ease-in-out infinite;
+}
+
+.marketing-preview__bars span:nth-child(1) { --height: 34%; --delay: -.2s; }
+.marketing-preview__bars span:nth-child(2) { --height: 48%; --delay: -.6s; }
+.marketing-preview__bars span:nth-child(3) { --height: 65%; --delay: -.95s; }
+.marketing-preview__bars span:nth-child(4) { --height: 85%; --delay: -1.3s; }
+.marketing-preview__bars span:nth-child(5) { --height: 98%; --delay: -1.65s; }
+
+.marketing-preview__donut {
+  left: 59.8%;
+  top: 21.9%;
+  width: 13.5%;
+  height: 21%;
+  border-radius: 50%;
+  background: conic-gradient(transparent 78%, rgb(255 211 145 / 70%), transparent);
+  mask-image: radial-gradient(transparent 37%, black 40%, black 68%, transparent 71%);
+  animation: marketing-donut 3.6s linear infinite;
+}
+
+@keyframes marketing-bars {
+  0%, 100% { transform: scaleY(.52); }
+  42% { transform: scaleY(1); }
+  69% { transform: scaleY(.73); }
+}
+
+@keyframes marketing-donut {
+  to { transform: rotate(360deg); }
+}
+
+.marketing-preview__chart {
+  inset: 0;
+  clip-path: polygon(35.5% 16%, 56% 20%, 54% 39.5%, 34% 36%);
+  background: linear-gradient(105deg, transparent 40%, rgb(255 213 147 / 53%) 50%, transparent 59%);
+  background-size: 220% 100%;
+  animation: marketing-chart 4s ease-in-out infinite;
+}
+
+.marketing-preview__engagement {
+  left: 14.2%;
+  top: 84%;
+  color: #ffd3a0;
+  font-size: clamp(.55rem, 1.4vw, 1rem);
+  line-height: 1;
+  text-shadow: 0 0 7px #ed9a56;
+  animation: marketing-engagement 4s ease-out infinite;
+}
+
+.marketing-preview__conversion {
+  left: 85.5%;
+  top: 57.5%;
+  width: 1.6%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff0bd;
+  box-shadow: 0 0 8px 2px #ff9e4e;
+  animation: marketing-conversion 4s ease-in-out infinite;
+}
+
+@keyframes marketing-chart {
+  0%, 24% { background-position: 100% 0; opacity: 0; }
+  34%, 49% { opacity: 1; }
+  62%, 100% { background-position: 0 0; opacity: 0; }
+}
+
+@keyframes marketing-engagement {
+  0%, 7% { opacity: 0; transform: translateY(0) scale(.75); }
+  14% { opacity: 1; }
+  28%, 100% { opacity: 0; transform: translateY(-85%) scale(1.2); }
+}
+
+@keyframes marketing-conversion {
+  0%, 57% { top: 57.5%; opacity: 0; }
+  64% { opacity: .9; }
+  77% { top: 77%; opacity: 1; }
+  84%, 100% { top: 83%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-preview__bars,
+  .marketing-preview__donut,
+  .marketing-preview__chart,
+  .marketing-preview__engagement,
+  .marketing-preview__conversion { display: none; }
+}

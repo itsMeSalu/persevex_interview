@@ -1,0 +1,193 @@
+.android-preview {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 26rem);
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.android-preview > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 10px #47302220);
+}
+
+.android-preview-screen,
+.android-preview-compose,
+.android-preview-note,
+.android-preview-cache,
+.android-preview-network {
+  position: absolute;
+  pointer-events: none;
+}
+
+.android-preview-screen {
+  inset: 33% 35% 21% 27%;
+  overflow: hidden;
+}
+
+.android-preview-screen::after {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 27%;
+  border-radius: 0.4rem;
+  background: linear-gradient(90deg, transparent, #ffc09f90, transparent);
+  animation: android-screen-update 5.4s ease-in-out infinite;
+  content: '';
+}
+
+.android-preview-compose {
+  left: 51.7%;
+  top: 81.8%;
+  width: 12.7%;
+  height: 11.7%;
+  border: 2px solid #ffc498;
+  border-radius: 31%;
+  box-shadow: 0 0 10px #ff9354a0;
+  opacity: 0;
+  animation: android-compose-tap 5.4s ease-out infinite;
+}
+
+.android-preview-note {
+  inset: 64.8% 35.1% 21.5% 27.35%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-inline-end: 3%;
+  border: 1px solid #dd9665;
+  border-radius: 0.65rem;
+  background: #ffc59b45;
+  opacity: 0;
+  animation: android-note-highlight 5.4s ease-in-out infinite;
+}
+
+.android-preview-note > span {
+  display: grid;
+  width: clamp(0.9rem, 2vw, 1.5rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7f3e8;
+  color: #3e6a4e;
+  font-size: clamp(0.65rem, 1.4vw, 0.95rem);
+  font-weight: 800;
+  opacity: 0;
+  animation: android-note-synced 5.4s ease-out infinite;
+}
+
+.android-preview-cache,
+.android-preview-network {
+  width: clamp(7px, 1.3vw, 13px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid white;
+  opacity: 0;
+}
+
+.android-preview-cache {
+  translate: -50% -50%;
+  background: #cc6937;
+  box-shadow: 0 0 12px #e78850;
+  animation: android-cache-pulse 5.4s ease-in-out infinite;
+}
+
+.android-preview-network {
+  translate: -50% -50%;
+  background: #629374;
+  box-shadow: 0 0 13px #74ac89;
+  animation: android-network-pulse 5.4s ease-in-out infinite;
+}
+
+.android-preview-caption {
+  position: absolute;
+  right: 0;
+  top: 23%;
+}
+
+.android-preview-status {
+  display: grid;
+  place-items: center;
+  min-width: 6.75rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #e7cbba;
+  border-radius: 999px;
+  background: #fffaf5f2;
+  box-shadow: 0 5px 16px #533a241b;
+  color: #914424;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.android-preview-status span { grid-area: 1 / 1; opacity: 0; }
+.android-preview-status span:first-child { animation: android-status-offline 5.4s linear infinite; }
+.android-preview-status span:nth-child(2) { animation: android-status-syncing 5.4s linear infinite; }
+.android-preview-status span:last-child { color: #3e6a4e; animation: android-status-ready 5.4s linear infinite; }
+
+@keyframes android-screen-update {
+  0%, 5% { transform: translateY(0); opacity: 0; }
+  12%, 20% { opacity: 1; }
+  28%, 100% { transform: translateY(275%); opacity: 0; }
+}
+
+@keyframes android-cache-pulse {
+  0%, 8% { left: 23%; top: 53.3%; opacity: 0; }
+  14% { opacity: 1; }
+  20% { left: 17%; top: 53.3%; opacity: 1; }
+  26% { left: 12%; top: 56%; opacity: 1; }
+  32%, 100% { left: 12%; top: 59%; opacity: 0; }
+}
+
+@keyframes android-network-pulse {
+  0%, 32% { left: 72%; top: 59.4%; opacity: 0; }
+  40% { opacity: 1; }
+  48% { left: 80%; top: 59.4%; opacity: 1; }
+  57% { left: 85.5%; top: 62%; opacity: 1; }
+  66%, 100% { left: 85.5%; top: 67%; opacity: 0; }
+}
+
+@keyframes android-compose-tap {
+  0%, 4% { scale: 0.84; opacity: 0; }
+  8% { opacity: 1; }
+  19%, 100% { scale: 1.16; opacity: 0; }
+}
+
+@keyframes android-note-highlight {
+  0%, 14% { opacity: 0; }
+  22%, 63% { opacity: 1; }
+  70%, 87% { opacity: 1; background: #dce9d655; border-color: #7f9d7a; }
+  98%, 100% { opacity: 0; }
+}
+
+@keyframes android-note-synced {
+  0%, 62% { scale: 0.65; opacity: 0; }
+  70%, 88% { scale: 1; opacity: 1; }
+  96%, 100% { opacity: 0; }
+}
+
+@keyframes android-status-offline {
+  0%, 27% { opacity: 1; }
+  32%, 96% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes android-status-syncing {
+  0%, 27%, 65%, 100% { opacity: 0; }
+  32%, 60% { opacity: 1; }
+}
+
+@keyframes android-status-ready {
+  0%, 60%, 100% { opacity: 0; }
+  65%, 96% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .android-preview-screen::after,
+  .android-preview-compose,
+  .android-preview-note,
+  .android-preview-note > span,
+  .android-preview-cache,
+  .android-preview-network,
+  .android-preview-status span { animation: none; }
+  .android-preview-status span:last-child { opacity: 1; }
+}

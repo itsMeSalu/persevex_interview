@@ -1,0 +1,47 @@
+.market-preview__chart {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4%;
+  padding-inline: 5%;
+  border-bottom: 1px solid #9c7b66;
+  background: repeating-linear-gradient(to top, transparent 0 24%, rgb(236 194 150 / 16%) 24% 25%);
+}
+
+.market-preview__chart span {
+  position: relative;
+  align-self: start;
+  top: calc(100% - var(--level));
+  width: 64%;
+  height: 15%;
+  justify-self: center;
+  border-radius: 1px;
+  color: #e6ae7f;
+  background: currentColor;
+  animation: market-tick 3.4s var(--delay) ease-in-out infinite;
+}
+
+.market-preview__chart span:nth-child(3n) { color: #ae8274; }
+
+.market-preview__chart span::before {
+  position: absolute;
+  inset: -39% auto -32% 50%;
+  width: 1px;
+  background: currentColor;
+  content: '';
+}
+
+.market-preview__legend {
+  display: flex;
+  justify-content: space-between;
+  color: #dec2a8;
+}
+
+@keyframes market-tick {
+  0%, 100% { transform: translateY(0) scaleY(.85); }
+  43% { transform: translateY(-30%) scaleY(1.2); }
+  72% { transform: translateY(18%) scaleY(.93); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .market-preview__chart span { animation: none; }
+}

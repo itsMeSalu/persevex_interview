@@ -1,0 +1,91 @@
+.drone-preview {
+  position: relative;
+  isolation: isolate;
+  width: min(90%, 30rem);
+  min-width: 0;
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.drone-preview::before {
+  position: absolute;
+  z-index: -1;
+  inset: auto 10% -2% 10%;
+  height: 8%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #5136283b, #51362813 54%, transparent 75%);
+  filter: blur(6px);
+  content: '';
+}
+
+.drone-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 9px 7px #47302224);
+}
+
+.drone-preview-rotors,
+.drone-preview-signals { position: absolute; inset: 0; pointer-events: none; }
+
+.drone-preview-rotors i,
+.drone-preview-signals i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  translate: -50% -50%;
+}
+
+.drone-preview-rotors i {
+  width: 26%;
+  aspect-ratio: 1;
+  transform: rotateX(68deg);
+}
+
+.drone-preview-rotors i::after {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-inline-color: #bd784e85;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px #e8b48f30;
+  opacity: 0;
+  content: '';
+}
+
+.drone-preview-rotors i:nth-child(1) { --x: 24%; --y: 6.3%; }
+.drone-preview-rotors i:nth-child(2) { --x: 76%; --y: 6.3%; }
+.drone-preview-rotors i:nth-child(3) { --x: 17%; --y: 40%; }
+.drone-preview-rotors i:nth-child(4) { --x: 83%; --y: 40%; }
+
+.drone-preview-signals i {
+  width: 4%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c7ffc49c, transparent 72%);
+  opacity: 0;
+}
+
+.drone-preview-signals i:first-child { --x: 54%; --y: 31.7%; }
+.drone-preview-signals i:last-child { --x: 54.2%; --y: 68.7%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .drone-preview { animation: trainer-hover 4.4s ease-in-out infinite; }
+  .drone-preview-rotors i::after { opacity: 1; animation: trainer-rotor 1.15s linear infinite; }
+  .drone-preview-rotors i:nth-child(even)::after { animation-direction: reverse; }
+  .drone-preview-signals i { animation: trainer-signal 2.2s ease-out infinite; }
+  .drone-preview-signals i:last-child { animation-delay: 0.45s; }
+}
+
+@keyframes trainer-hover {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+
+@keyframes trainer-rotor { to { rotate: 360deg; } }
+
+@keyframes trainer-signal {
+  0% { scale: 0.75; opacity: 0; }
+  25% { opacity: 1; }
+  65%, 100% { scale: 1.8; opacity: 0; }
+}

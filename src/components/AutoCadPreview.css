@@ -1,0 +1,71 @@
+.autocad-preview {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 35rem);
+  min-width: 0;
+  margin-inline: auto;
+  scroll-margin-top: 1.5rem;
+}
+
+.autocad-preview::before {
+  position: absolute;
+  z-index: -1;
+  inset: auto 7% -1.25% 10%;
+  height: 8%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #51362830, #51362812 55%, transparent 75%);
+  filter: blur(6px);
+  content: '';
+}
+
+.autocad-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 6px #49312421);
+}
+
+.autocad-preview-scan,
+.autocad-preview-hole {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.autocad-preview-scan {
+  inset: 0;
+  clip-path: polygon(1% 56%, 47% 49%, 72% 90%, 13% 100%);
+  background: linear-gradient(175deg, transparent 50%, #efaa7770 68%, transparent 73%) no-repeat;
+  background-size: 100% 48%;
+}
+
+.autocad-preview-hole {
+  left: 64%;
+  top: 43.4%;
+  width: 8.2%;
+  height: 6.3%;
+  translate: -50% -50%;
+  border: 1px solid #fff1cd;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #e99455b0, inset 0 0 9px #ffd0a17a;
+}
+
+.autocad-preview-hole-right { left: 84%; top: 41%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .autocad-preview-scan { animation: autocad-sheet-scan 5.4s ease-in-out infinite; }
+  .autocad-preview-hole { animation: autocad-hole-check 5.4s ease-out infinite; }
+  .autocad-preview-hole-right { animation-delay: 0.35s; }
+}
+
+@keyframes autocad-sheet-scan {
+  0%, 8% { background-position: 0 48%; opacity: 0; }
+  18%, 32% { opacity: 1; }
+  50%, 100% { background-position: 0 138%; opacity: 0; }
+}
+
+@keyframes autocad-hole-check {
+  0%, 38% { scale: 0.72; opacity: 0; }
+  51%, 62% { scale: 1; opacity: 1; }
+  76%, 100% { scale: 1.2; opacity: 0; }
+}
