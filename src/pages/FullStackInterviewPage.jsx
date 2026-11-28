@@ -1,14 +1,15 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { BookOpen, Clock3, FolderOpen, Layers3 } from 'lucide-react'
 import FullStackCertificates from '../components/FullStackCertificates.jsx'
 import FullStackFaq from '../components/FullStackFaq.jsx'
 import FullStackProjects from '../components/FullStackProjects.jsx'
 import FullStackPreview from '../components/FullStackPreview.jsx'
-import InterviewDemo from '../components/InterviewDemo.jsx'
 import TrainingPartners from '../components/TrainingPartners.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
 import SiteHeader from '../components/SiteHeader.jsx'
+import { programOverviewContent } from './programOverviewContent.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -85,7 +86,8 @@ const fullStackTrack = {
 }
 
 export default function FullStackInterviewPage({ track = fullStackTrack } = {}) {
-  const { title, shortTitle, program, preview, previewLabel, Preview = FullStackPreview, heroDescription, projectDescription, topics, overviewHeading, overviewDescription, focusAreas, practiceSkills, curriculum, demo, projects, questions } = track
+  const { title, shortTitle, program, preview, previewLabel, Preview = FullStackPreview, heroDescription, projectDescription, topics, curriculum, projects, questions } = track
+  const programOverview = programOverviewContent[program || 'web-development']
   const hero = useRef(null)
   const overview = useRef(null)
 
@@ -127,10 +129,12 @@ export default function FullStackInterviewPage({ track = fullStackTrack } = {}) 
       gsap.timeline({ defaults, scrollTrigger: { trigger: focus, start: 'top 92%', once: true } })
         .from(focus.querySelector('h3'), { y: 16, duration: 0.4 })
         .from(focus.querySelectorAll('li'), { y: 22, stagger: 0.13 }, 0.14)
-      gsap.from(skills, {
-        ...defaults, y: 22,
-        scrollTrigger: { trigger: skills, start: 'top 92%', once: true },
-      })
+      if (skills) {
+        gsap.from(skills, {
+          ...defaults, y: 22,
+          scrollTrigger: { trigger: skills, start: 'top 92%', once: true },
+        })
+      }
     })
 
     return () => motion.revert()
@@ -160,8 +164,8 @@ export default function FullStackInterviewPage({ track = fullStackTrack } = {}) 
                 ))}
               </dl>
               <div data-hero-actions className="mt-8 flex flex-wrap items-center gap-4">
-                <InterviewDemo {...demo} />
-                <a className="nav-link inline-flex min-h-12 items-center gap-2 font-bold" href="#rounds">Explore practice topics <span aria-hidden="true">↓</span></a>
+                <a className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#f58220] px-6 font-bold text-white shadow-[0_8px_20px_#b65b1533] transition-colors hover:bg-[#d9670b]" href="https://www.persevex.com/fees">Enroll Now <span aria-hidden="true" className="ml-2">↗</span></a>
+                <a className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#d9b9a4] bg-white px-6 font-bold text-[#8c411f] transition-colors hover:bg-[#fff3e9]" href={`https://www.persevex.com/courses/${program || 'web-development'}#curriculum`}>View Curriculum <span aria-hidden="true" className="ml-2">→</span></a>
               </div>
             </div>
 
@@ -169,51 +173,50 @@ export default function FullStackInterviewPage({ track = fullStackTrack } = {}) 
           </div>
         </section>
 
-        <section ref={overview} id="rounds" aria-labelledby="rounds-title" className="scroll-mt-0 border-t border-[#eee5dc] bg-white">
-          <div className="page-width max-w-[84rem] py-6 sm:py-8 lg:py-10">
-            <div className="grid gap-5 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.88fr)] lg:gap-16">
-              <div className="flex flex-col">
+        <section ref={overview} id="rounds" aria-labelledby="rounds-title" className="scroll-mt-0 border-y border-[#eee5dc] bg-white">
+          <div className="page-width max-w-[84rem] py-14 sm:py-16 lg:py-20">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:gap-12">
+              <div className="min-w-0">
                 <div data-track-heading>
-                  <p className="mb-2 text-sm font-bold text-[#a34421]">About this interview track</p>
-                  <h2 id="rounds-title" className="max-w-[20ch] text-[clamp(1.75rem,3.2vw,3.25rem)] leading-[1.1] font-extrabold tracking-[-0.045em]">
-                    {overviewHeading[0]} <span className="brand-gradient-text">{overviewHeading[1]}</span>
+                  <p className="mb-5 inline-flex items-center gap-2.5 rounded-full bg-[#fff0e3] px-4 py-2 text-xs font-bold uppercase tracking-[.08em] text-[#a34421]"><span aria-hidden="true" className="size-2 rounded-full bg-[#f4770b]" />About this program</p>
+                  <h2 id="rounds-title" className="text-[clamp(2rem,3.3vw,3.2rem)] leading-[1.12] font-extrabold tracking-[-0.045em]">
+                    A practical path into<br /><span className="brand-gradient-text">{programOverview.title}.</span>
                   </h2>
                 </div>
-                <p className="mt-3 max-w-[54ch] text-sm leading-relaxed sm:text-base text-[#614e44]">
-                  {overviewDescription}
-                </p>
-                <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-[#e9ded3] pt-3 sm:grid-cols-4">
-                  <div><dt className="text-sm font-semibold text-[#614e44]">Focus areas</dt><dd className="mt-1 font-extrabold">{focusAreas.length}</dd></div>
-                  <div><dt className="text-sm font-semibold text-[#614e44]">Sample format</dt><dd className="mt-1 font-extrabold">Mock interview</dd></div>
-                  <div><dt className="text-sm font-semibold text-[#614e44]">Demo prompts</dt><dd className="mt-1 font-extrabold">{demo.prompts.length}</dd></div>
-                  <div><dt className="text-sm font-semibold text-[#614e44]">Review</dt><dd className="mt-1 font-extrabold">Example feedback</dd></div>
+                <p className="mt-5 max-w-[66ch] text-sm leading-[1.8] text-[#6e625e] sm:text-base">{programOverview.description}</p>
+                <dl className="mt-8 grid grid-cols-2 gap-y-6 sm:grid-cols-4">
+                  {[
+                    { label: 'Program Length', value: `${programOverview.weeks} weeks`, Icon: Clock3 },
+                    { label: 'Learning Modules', value: programOverview.modules, Icon: Layers3 },
+                    { label: 'Guided Lessons', value: programOverview.lessons, Icon: BookOpen },
+                    { label: 'Portfolio Projects', value: programOverview.projects, Icon: FolderOpen },
+                  ].map(({ label, value, Icon }) => <div key={label} className="flex gap-2 border-l border-[#ead9cc] px-3 first:border-l-0 first:pl-0 max-sm:odd:border-l-0 max-sm:odd:pl-0">
+                    <Icon size={21} strokeWidth={1.7} className="shrink-0 text-[#ed750c]" aria-hidden="true" />
+                    <div><dt className="text-xs font-semibold uppercase tracking-[.04em] text-[#81746e]">{label}</dt><dd className="mt-2 text-lg font-extrabold text-[#281e1a]">{value}</dd></div>
+                  </div>)}
                 </dl>
-
-                <div data-track-skills className="mt-4 rounded-2xl border border-[#eee2d8] bg-[#fffaf5] p-3 shadow-[0_3px_0_#ead6c7,0_10px_24px_#69432b18,inset_0_1px_0_#ffffff] sm:p-4">
-                  <h3 className="mb-2 text-sm font-extrabold">Skills covered</h3>
-                  <ul className="flex flex-wrap gap-2">
-                    {practiceSkills.map((skill) => (
-                      <li key={skill} className="rounded-full border border-[#efd9c8] bg-white px-3 py-1 text-sm font-semibold text-[#873a1f]">{skill}</li>
-                    ))}
-                  </ul>
-                </div>
               </div>
 
-              <div data-track-focus className="lg:border-l lg:border-[#e9ded3] lg:pl-8">
-                <h3 className="mb-2 text-lg font-extrabold tracking-tight">Interview focus areas</h3>
-                <ol className="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-1">
-                  {focusAreas.map(([title, detail], index) => (
-                    <li key={title} className="flex items-start gap-3 rounded-xl border border-[#eee2d8] bg-[#fffaf5] px-3 py-2">
-                      <span aria-hidden="true" className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#ffe8d7] text-xs font-bold text-[#983b17]">{String(index + 1).padStart(2, '0')}</span>
-                      <div>
-                        <h4 className="font-extrabold">{title}</h4>
-                        <p className="mt-0.5 text-sm leading-relaxed text-[#614e44]">{detail}</p>
-                      </div>
-                    </li>
-                  ))}
+              <div data-track-focus className="min-w-0 lg:border-l lg:border-[#e9ded3] lg:pl-8">
+                <p className="text-xs font-bold uppercase tracking-[.13em] text-[#a34421]">Program focus</p>
+                <div className="mb-4 mt-3 flex flex-wrap items-end justify-between gap-2">
+                  <h3 className="text-xl font-bold tracking-tight">What this track is built around</h3>
+                  <span className="text-xs text-[#81746e]">{programOverview.outcomes.length} core outcomes</span>
+                </div>
+                <ol className="grid gap-3">
+                  {programOverview.outcomes.map((outcome, index) => <li key={outcome} className="flex min-h-16 items-center gap-4 rounded-xl border border-[#eee2d8] bg-[#fffaf5] px-4 py-3">
+                    <span aria-hidden="true" className="grid size-10 shrink-0 place-items-center rounded-full bg-[#fff0e3] text-sm font-bold text-[#a34421]">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-sm font-semibold leading-6">{outcome}</span>
+                  </li>)}
                 </ol>
               </div>
             </div>
+            {programOverview.skills.length > 0 && <div data-track-skills className="mt-8 rounded-xl border border-[#eee2d8] bg-[#fffaf5] px-4 py-4">
+              <h3 className="text-xs font-bold uppercase tracking-[.12em] text-[#81746e]">Skills covered</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {programOverview.skills.map(skill => <li key={skill} className="rounded-full bg-[#fff0e3] px-3 py-1.5 text-xs font-semibold text-[#9a451c]">{skill}</li>)}
+              </ul>
+            </div>}
           </div>
         </section>
         <PracticeRoadmap title={shortTitle} curriculum={curriculum} />
