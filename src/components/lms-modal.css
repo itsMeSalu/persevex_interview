@@ -18,4 +18,8 @@
 .lms-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.lms-fields label{min-width:0}.lms-fields label>input,.lms-phone{display:block;width:100%;height:42px;border:1px solid #dce3ec;border-radius:9px;background:#fff;color:#19283e;font-size:13px}
 .lms-fields label>input{padding:0 12px}.lms-fields input::placeholder{color:#9ca8b8}.lms-fields input:focus,.lms-phone:focus-within{outline:2px solid #f58220;outline-offset:1px}
 .lms-phone{display:flex;align-items:center}.lms-phone>span{padding:0 8px;border-right:1px solid #dce3ec;white-space:nowrap;color:#697688;font-size:12px}.lms-phone input{width:100%;min-width:0;height:100%;padding:0 9px;border:0;outline:0;background:transparent;font-size:13px}.lms-submit{margin-top:14px}
+.lms-legal{margin:16px 0 12px;color:#697688;font-size:11px;line-height:1.5;text-align:center}
+.lms-legal a{color:#9a4c15;text-decoration:underline;text-underline-offset:2px}
+.lms-submit{margin-top:0}
+.lms-assurance{display:flex;align-items:center;justify-content:center;gap:6px;margin:11px 0 0;color:#697688;font-size:11px;text-align:center}
 @media(max-width:480px){.lms-backdrop{padding:10px}.lms-modal-head,.lms-form{padding-left:18px;padding-right:18px}.lms-fields{grid-template-columns:1fr}.lms-options label{padding:9px}.lms-options strong{font-size:12px}}

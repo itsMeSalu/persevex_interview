@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowUpRight, Check, X } from 'lucide-react'
+import { ArrowUpRight, Check, ShieldCheck, X } from 'lucide-react'
 import './lms-modal.css'
 
 const plans = [
@@ -42,7 +42,9 @@ export default function LmsModal({ onClose }) {
         <fieldset><legend>Select plan</legend><div className="lms-options">{plans.map(item => <label key={item.name} className={plan === item.name ? 'selected' : ''}><input type="radio" name="plan" value={item.name} checked={plan === item.name} onChange={() => setPlan(item.name)} /><strong>{item.name}</strong><b>₹{item.price.toLocaleString('en-IN')}</b>{plan === item.name && <Check size={18} aria-hidden="true" />}</label>)}</div></fieldset>
         <fieldset><legend>Payment option</legend><div className="lms-options">{[['reserve', 'Reserve seat', '₹1,500', 'Pay now'], ['full', 'Pay in full', `₹${selectedPrice.toLocaleString('en-IN')}`, 'Full plan price']].map(([value, title, price, note]) => <label key={value} className={payment === value ? 'selected' : ''}><input type="radio" name="payment" value={value} checked={payment === value} onChange={() => setPayment(value)} /><strong>{title}</strong><b>{price}</b><small>{note}</small>{payment === value && <Check size={18} aria-hidden="true" />}</label>)}</div></fieldset>
         <div className="lms-fields"><label><span className="sr-only">Full name</span><input name="name" required autoComplete="name" placeholder="Full name" /></label><label><span className="sr-only">Phone number</span><span className="lms-phone"><span>🇮🇳 +91</span><input name="phone" required type="tel" inputMode="tel" pattern="[0-9]{10}" title="Enter a 10 digit phone number" placeholder="Phone number" /></span></label><label><span className="sr-only">Email address</span><input name="email" required type="email" autoComplete="email" placeholder="Email address" /></label><label><span className="sr-only">College name</span><input name="college" required placeholder="College name" /></label></div>
-        <button className="lms-submit" type="submit">Send registration request</button>
+        <p className="lms-legal">By signing up, you agree to our <a href="/terms-of-service" target="_blank" rel="noopener noreferrer">T&amp;C</a> and <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+        <button className="lms-submit" type="submit">Request ₹{payment === 'reserve' ? '1,500' : selectedPrice.toLocaleString('en-IN')} · {payment === 'reserve' ? 'Reserve seat' : 'Pay in full'}</button>
+        <p className="lms-assurance"><ShieldCheck size={15} aria-hidden="true" /> Registration request · Payment details shared separately</p>
       </form>
     </section>
   </div>
