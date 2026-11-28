@@ -188,7 +188,7 @@ export default function HomePage() {
             <div>
               <p data-home-hero-badge className="inline-flex items-center gap-2 rounded-full border border-[#ffd7bc] bg-[#fff0e4] px-3 py-2 text-sm font-bold text-[#b53905] sm:px-4">
                 <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-[#e95305]"></span>
-                AntIntern by Persevex
+                AntIntern
               </p>
 
               <h1 id="hero-title" className="mt-6 text-[clamp(2.35rem,4.05vw,5.1rem)] leading-[1.04] font-extrabold tracking-[-0.055em]">
@@ -205,7 +205,7 @@ export default function HomePage() {
               </p>
 
               <div data-hero-actions className="mt-7 flex flex-wrap gap-3 sm:mt-8">
-                <a className="inline-flex min-h-12 items-center gap-3 rounded-xl bg-linear-to-r from-[#c74b04] to-[#bf3600] px-5 py-3 font-bold text-white transition-colors hover:from-[#a83e02] hover:to-[#a62f00] motion-reduce:transition-none" href="https://www.antintern.com/signup">
+                <a className="inline-flex min-h-12 items-center gap-3 rounded-xl bg-linear-to-r from-[#c74b04] to-[#bf3600] px-5 py-3 font-bold text-white transition-colors hover:from-[#a83e02] hover:to-[#a62f00] motion-reduce:transition-none" href="/signup">
                   Start Free Account <span aria-hidden="true">→</span>
                 </a>
                 <InterviewDemo />
@@ -235,7 +235,7 @@ export default function HomePage() {
         <div className="bg-[linear-gradient(180deg,#fffaf2_0%,#fff_34%,#fff7ee_100%)]">
           <section aria-labelledby="platform-title" className="page-width grid items-center gap-9 py-16 sm:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-[8vw] lg:px-[4.45vw]">
             <div data-scroll-reveal>
-              <p className="mb-4 text-sm font-semibold brand-gradient-text">The Persevex interview platform</p>
+              <p className="mb-4 text-sm font-semibold brand-gradient-text">The AntIntern interview platform</p>
               <h2 id="platform-title" className="platform-title max-w-[16ch]">See the skills behind the résumé</h2>
               <p className="mt-5 max-w-[42ch] leading-relaxed text-[#574b43]">
                 Give candidates work that reflects the role. Follow their reasoning in live interviews, then use consistent criteria to review the evidence.
@@ -260,7 +260,7 @@ export default function HomePage() {
                 <p className="mt-5 max-w-[42ch] leading-relaxed text-[#574b43]">
                   Compare what each candidate built, how they explained their decisions, and where they met the role’s requirements.
                 </p>
-                <a className="hero-action hero-action-secondary mt-7" href="mailto:support@persevex.com?subject=Persevex%20technical%20hiring">Contact Persevex <span aria-hidden="true">↗</span></a>
+                <a className="hero-action hero-action-secondary mt-7" href="mailto:support@antintern.com?subject=AntIntern%20technical%20hiring">Contact AntIntern <span aria-hidden="true">↗</span></a>
               </div>
               <figure className="aspect-[4/3] overflow-hidden rounded-xl bg-[#f6e0d2]">
                 <video src={hiringDebriefVideo} poster={teamDebriefPhoto} aria-label="Colleagues reviewing documents and discussing work in an office" className="size-full object-cover" muted playsInline loop controls preload="none" />

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-const catalog = 'https://www.persevex.com'
 const interviewPages = {
   'web-development': '/interviews/full-stack-web-development',
   'cloud-computing': '/interviews/cloud-computing',
@@ -80,7 +79,7 @@ const placementCourses = [
 ].map(([title, slug]) => ({
   title,
   department: placementDepartment,
-  href: catalog + '/courses/' + slug,
+  href: interviewPages[slug],
 }))
 
 const courses = departments.flatMap(([department, entries]) =>
@@ -88,7 +87,7 @@ const courses = departments.flatMap(([department, entries]) =>
     title,
     department,
     description,
-    href: interviewPages[slug] ?? catalog + '/courses/' + slug,
+    href: interviewPages[slug] ?? '/#interviews',
   })),
 )
 
@@ -151,7 +150,7 @@ export default function ProgramsMenu({ onFollow, onClose }) {
             ))}
           </div>
           <div className="mt-auto pt-5">
-            <a href={catalog + '/explore-courses'} onClick={onFollow} className="flex items-center justify-between gap-2 rounded-2xl bg-[#ffe9d9] p-3 font-bold text-[#963b15] hover:bg-[#ffddc5]">
+            <a href={'/#interviews'} onClick={onFollow} className="flex items-center justify-between gap-2 rounded-2xl bg-[#ffe9d9] p-3 font-bold text-[#963b15] hover:bg-[#ffddc5]">
               <span>Not sure?<span className="mt-1 block text-xs font-medium">Explore all programs</span></span>
               <span aria-hidden="true" className="grid size-9 shrink-0 place-items-center rounded-full bg-white">→</span>
             </a>
@@ -180,7 +179,7 @@ export default function ProgramsMenu({ onFollow, onClose }) {
               <div>
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-bold">Browse by Department</h3>
-                  <a href={catalog + '/explore-courses'} onClick={onFollow} className="text-xs font-bold text-[#963b15] hover:underline">View All Departments <span aria-hidden="true">→</span></a>
+                  <a href={'/#interviews'} onClick={onFollow} className="text-xs font-bold text-[#963b15] hover:underline">View All Departments <span aria-hidden="true">→</span></a>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {visibleDepartments.map(([name, entries]) => (

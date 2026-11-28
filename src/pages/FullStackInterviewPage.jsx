@@ -8,7 +8,7 @@ import FullStackPreview from '../components/FullStackPreview.jsx'
 import InterviewDemo from '../components/InterviewDemo.jsx'
 import TrainingPartners from '../components/TrainingPartners.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
-import logo from '../assets/antintern-logo.svg'
+import SiteHeader from '../components/SiteHeader.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -138,23 +138,7 @@ export default function FullStackInterviewPage({ track = fullStackTrack } = {}) 
 
   return (
     <div id="top" className={`min-h-screen bg-white text-[#281e1a] antialiased ${program === 'psychology' ? 'psychology-page' : ''} ${program === 'medical-coding' ? 'medical-coding-page' : ''}`}>
-      <header className="border-b border-[#e9ded3] bg-white">
-        <nav aria-label="Interview page" className="page-width flex min-h-18 flex-wrap items-center justify-between gap-x-6 gap-y-2 py-3">
-          <a href="/" className="inline-flex items-center gap-2 text-xl font-extrabold tracking-tight">
-            <img src={logo} alt="" width="36" height="36" />
-            AntIntern
-          </a>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-bold">
-            <a className="nav-link" href="/#interviews">All interviews</a>
-            <a className="nav-link" href="#rounds">Practice topics</a>
-            <a className="nav-link" href="#roadmap">Curriculum</a>
-            <a className="nav-link" href="#projects">Projects</a>
-            <a className="nav-link" href="#certificates">Certificates</a>
-            <a className="nav-link" href="#faq">FAQs</a>
-            <a className="nav-link" href="#sample">{previewLabel ?? 'Stack preview'}</a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader programPage />
 
       <main>
         <section ref={hero} aria-labelledby="full-stack-title">

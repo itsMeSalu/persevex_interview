@@ -102,6 +102,6 @@ export const javaDevelopmentInterviewTrack = {
     ['Do I need Spring Boot experience to start?', 'Start with Java classes, methods, and collections. Once you can build and test a console application, use Spring Boot to expose the same business logic through an API.'],
     ['How does the Java mock interview work?', 'You’ll reason through duplicate orders in a Spring Boot service, answer a question about concurrent retries, and compare your solution with example feedback.'],
     ['Which project is a good starting point?', 'Start with Student Management to practice class design and collections. Move to the Task Manager REST API when you are ready to add persistence and HTTP behavior.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

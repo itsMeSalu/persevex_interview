@@ -1,0 +1,955 @@
+/* ========================================
+   ANTIINTERN JOURNEY SECTION
+======================================== */
+
+.aij-section {
+  --aij-orange: #f58220;
+  --aij-orange-hover: #df6d12;
+  --aij-dark: #222222;
+  --aij-muted: #666666;
+
+  width: 100%;
+  padding: 90px 40px 100px;
+
+  background: #ffffff;
+  color: var(--aij-dark);
+
+  overflow: hidden;
+}
+
+.aij-section *,
+.aij-section *::before,
+.aij-section *::after {
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   TWO COLUMN LAYOUT
+======================================== */
+
+.aij-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 55px;
+
+  width: 100%;
+  max-width: 1160px;
+
+  margin: 0 auto;
+}
+
+.aij-content {
+  position: relative;
+
+  min-width: 0;
+}
+
+
+/* ========================================
+   SECTION LABEL
+======================================== */
+
+.aij-eyebrow {
+  display: block;
+
+  color: var(--aij-orange);
+
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.5;
+
+  letter-spacing: 0.14em;
+
+  margin-bottom: 19px;
+}
+
+
+/* ========================================
+   MAIN ORANGE HEADING
+======================================== */
+
+.aij-heading {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(34px, 3.5vw, 49px);
+  font-weight: 400;
+  line-height: 1.17;
+
+  letter-spacing: -0.035em;
+
+  color: var(--aij-orange);
+
+  margin: 0 0 24px;
+}
+
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.aij-description {
+  max-width: 540px;
+
+  color: var(--aij-muted);
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+
+  margin: 0;
+}
+
+
+/* ========================================
+   CTA BUTTON CONTAINER
+======================================== */
+
+.aij-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+
+/* ========================================
+   COMMON BUTTON STYLING
+======================================== */
+
+.aij-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 13px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 30px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.aij-button-primary {
+  background: var(--aij-orange);
+  border-color: var(--aij-orange);
+
+  color: #ffffff;
+}
+
+.aij-button-secondary {
+  background: #ffffff;
+  border-color: var(--aij-orange);
+
+  color: #252525;
+}
+
+.aij-button:focus-visible {
+  outline: 2px solid var(--aij-orange);
+  outline-offset: 4px;
+}
+
+.aij-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+
+/* ========================================
+   BUTTON HOVER ANIMATION
+======================================== */
+
+.aij-button-primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 65%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  transition: left 0.65s ease;
+}
+
+.aij-button-primary:hover {
+  background: var(--aij-orange-hover);
+  border-color: var(--aij-orange-hover);
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 18px rgba(245, 130, 32, 0.18);
+}
+
+.aij-button-primary:hover::before {
+  left: 140%;
+}
+
+.aij-button-secondary:not(:disabled):hover {
+  background: #fff4e9;
+
+  color: var(--aij-orange-hover);
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   THREE FEATURE HIGHLIGHTS
+======================================== */
+
+.aij-highlights {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1.2fr;
+
+  align-items: stretch;
+
+  margin-top: 38px;
+}
+
+.aij-highlight {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: 0 17px;
+}
+
+.aij-highlight:first-child {
+  padding-left: 0;
+}
+
+.aij-highlight:last-child {
+  padding-right: 0;
+}
+
+.aij-highlight:not(:last-child) {
+  border-right: 1px solid #dedede;
+}
+
+.aij-highlight h3 {
+  color: #262626;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+
+  margin: 0 0 12px;
+
+  transition: color 0.35s ease;
+}
+
+
+/* ========================================
+   FEATURE ORANGE UNDERLINE
+======================================== */
+
+.aij-highlight-line {
+  display: block;
+
+  width: 30px;
+  height: 3px;
+
+  margin-top: auto;
+
+  border-radius: 5px;
+
+  background: var(--aij-orange);
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aij-highlight:hover h3 {
+  color: var(--aij-orange-hover);
+}
+
+.aij-highlight:hover .aij-highlight-line {
+  width: 55px;
+}
+
+
+/* ========================================
+   RIGHT SIDE 3D IMAGE STAGE
+======================================== */
+
+.aij-visual {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  perspective: 1500px;
+}
+
+
+/* ========================================
+   IMAGE CARD
+======================================== */
+
+.aij-image-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+
+  --move-x: 0px;
+  --move-y: 0px;
+
+  position: relative;
+
+  width: 100%;
+  height: 470px;
+
+  border-radius: 25px;
+
+  background: #eee7df;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  transform:
+    rotateX(var(--rotate-x))
+    rotateY(var(--rotate-y));
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s ease;
+}
+
+
+/* ========================================
+   PHOTOGRAPH
+======================================== */
+
+.aij-image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.015);
+
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ========================================
+   CINEMATIC IMAGE OVERLAY
+======================================== */
+
+.aij-image-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.07),
+    transparent 50%,
+    rgba(0, 0, 0, 0.08)
+  );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   WHITE RECTANGULAR FRAME
+======================================== */
+
+.aij-frame {
+  position: absolute;
+
+  top: 8%;
+  left: 10%;
+
+  width: 80%;
+  height: 84%;
+
+  z-index: 2;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+.aij-frame-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* ========================================
+   FLOATING WHITE LABELS
+======================================== */
+
+.aij-floating-label {
+  position: absolute;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  padding: 13px 23px;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 40px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+  color: #252525;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+
+/* TOP LEFT LABEL */
+
+.aij-label-one {
+  top: 17%;
+  left: 4%;
+}
+
+
+/* MIDDLE RIGHT LABEL */
+
+.aij-label-two {
+  top: 53%;
+  right: 3%;
+}
+
+
+/* BOTTOM LABEL */
+
+.aij-label-three {
+  bottom: 12%;
+  right: 25%;
+}
+
+
+/* ========================================
+   ORANGE LINE INSIDE FLOATING LABELS
+======================================== */
+
+.aij-label-line {
+  width: 29px;
+  height: 3px;
+
+  background: var(--aij-orange);
+
+  border-radius: 5px;
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aij-floating-label:hover .aij-label-line {
+  width: 55px;
+}
+
+
+/* ========================================
+   3D HOVER AND IMAGE PARALLAX
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .aij-visual:hover .aij-image-card {
+    transform:
+      rotateX(var(--rotate-x))
+      rotateY(var(--rotate-y))
+      translateY(-4px);
+
+    box-shadow:
+      0 22px 45px rgba(0, 0, 0, 0.10);
+  }
+
+  .aij-visual:hover .aij-image {
+    transform:
+      scale(1.075)
+      translate(
+        var(--move-x),
+        var(--move-y)
+      );
+  }
+
+  .aij-visual:hover .aij-label-one {
+    transform: translate3d(-4px, -5px, 0);
+  }
+
+  .aij-visual:hover .aij-label-two {
+    transform: translate3d(4px, -3px, 0);
+  }
+
+  .aij-visual:hover .aij-label-three {
+    transform: translate3d(0, -7px, 0);
+  }
+
+  .aij-floating-label:hover {
+    box-shadow:
+      0 10px 22px rgba(0, 0, 0, 0.12);
+  }
+}
+
+
+/* ========================================
+   CINEMATIC SCROLL ENTRANCE
+======================================== */
+
+.aij-motion-ready .aij-content {
+  opacity: 0;
+
+  transform: translate3d(-35px, 20px, 0);
+}
+
+.aij-motion-ready .aij-visual {
+  opacity: 0;
+
+  transform:
+    perspective(1600px)
+    translate3d(45px, 30px, -80px)
+    rotateY(-7deg);
+}
+
+.aij-motion-ready .aij-content,
+.aij-motion-ready .aij-visual {
+  transition:
+    opacity 0.9s ease,
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aij-motion-ready.aij-visible .aij-content {
+  opacity: 1;
+
+  transform: translate3d(0, 0, 0);
+}
+
+.aij-motion-ready.aij-visible .aij-visual {
+  opacity: 1;
+
+  transform:
+    perspective(1600px)
+    translate3d(0, 0, 0)
+    rotateY(0deg);
+
+  transition-delay: 120ms;
+}
+
+
+/* ========================================
+   WHITE FRAME DRAWING ANIMATION
+======================================== */
+
+.aij-motion-ready .aij-frame-path {
+  stroke-dashoffset: 100;
+}
+
+.aij-motion-ready.aij-visible .aij-frame-path {
+  animation:
+    aijDrawFrame 1.8s
+    cubic-bezier(0.65, 0, 0.35, 1)
+    0.45s both;
+}
+
+@keyframes aijDrawFrame {
+  from {
+    stroke-dashoffset: 100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* ========================================
+   FLOATING LABEL ENTRANCE
+======================================== */
+
+.aij-motion-ready .aij-floating-label {
+  opacity: 0;
+}
+
+.aij-motion-ready.aij-visible .aij-label-one {
+  animation: aijLabelEntrance 0.8s ease 0.9s both;
+}
+
+.aij-motion-ready.aij-visible .aij-label-two {
+  animation: aijLabelEntrance 0.8s ease 1.2s both;
+}
+
+.aij-motion-ready.aij-visible .aij-label-three {
+  animation: aijLabelEntrance 0.8s ease 1.5s both;
+}
+
+@keyframes aijLabelEntrance {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+    scale: 0.96;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+
+/* ========================================
+   FEATURE STAGGERED ENTRANCE
+======================================== */
+
+.aij-motion-ready .aij-highlight {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.aij-motion-ready.aij-visible .aij-highlight {
+  animation:
+    aijHighlightEntrance 0.7s ease
+    calc(0.45s + var(--highlight-delay))
+    both;
+}
+
+@keyframes aijHighlightEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   LAPTOP RESPONSIVE
+======================================== */
+
+@media (max-width: 1200px) {
+
+  .aij-section {
+    padding: 75px 35px 85px;
+  }
+
+  .aij-container {
+    gap: 40px;
+  }
+
+  .aij-heading {
+    font-size: clamp(32px, 3.6vw, 44px);
+  }
+
+  .aij-image-card {
+    height: 440px;
+  }
+
+  .aij-highlight {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .aij-highlight h3 {
+    font-size: 13px;
+  }
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .aij-section {
+    padding: 65px 25px 75px;
+  }
+
+  .aij-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .aij-content {
+    max-width: 650px;
+  }
+
+  .aij-heading {
+    font-size: 43px;
+  }
+
+  .aij-description {
+    max-width: 600px;
+  }
+
+  .aij-highlights {
+    max-width: 560px;
+  }
+
+  .aij-highlight h3 {
+    font-size: 14px;
+  }
+
+  .aij-image-card {
+    height: 480px;
+  }
+
+  .aij-visual {
+    max-width: 680px;
+  }
+
+  .aij-floating-label {
+    font-size: 14px;
+
+    padding: 15px 25px;
+  }
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .aij-section {
+    padding: 50px 20px 60px;
+  }
+
+  .aij-container {
+    gap: 32px;
+  }
+
+  .aij-eyebrow {
+    font-size: 10px;
+
+    margin-bottom: 14px;
+  }
+
+  .aij-heading {
+    font-size: clamp(30px, 8vw, 39px);
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+  }
+
+  .aij-desktop-break {
+    display: none;
+  }
+
+  .aij-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .aij-actions {
+    gap: 10px;
+
+    margin-top: 25px;
+  }
+
+  .aij-button {
+    flex: 1;
+
+    min-height: 44px;
+
+    padding: 12px 15px;
+
+    font-size: 12px;
+  }
+
+  .aij-highlights {
+    margin-top: 30px;
+  }
+
+  .aij-highlight {
+    padding: 0 10px;
+  }
+
+  .aij-highlight h3 {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .aij-highlight-line {
+    width: 23px;
+    height: 2px;
+  }
+
+  .aij-image-card {
+    height: 365px;
+
+    border-radius: 20px;
+  }
+
+  .aij-frame {
+    top: 9%;
+    left: 9%;
+
+    width: 82%;
+    height: 82%;
+  }
+
+  .aij-floating-label {
+    padding: 11px 15px;
+
+    font-size: 11px;
+
+    gap: 6px;
+  }
+
+  .aij-label-line {
+    width: 23px;
+    height: 2px;
+  }
+
+  .aij-label-one {
+    top: 16%;
+    left: 3%;
+  }
+
+  .aij-label-two {
+    top: 53%;
+    right: 2%;
+  }
+
+  .aij-label-three {
+    bottom: 12%;
+    right: 20%;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 360px) {
+
+  .aij-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .aij-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .aij-image-card {
+    height: 320px;
+  }
+
+  .aij-floating-label {
+    font-size: 10px;
+    padding: 10px 13px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .aij-section *,
+  .aij-section *::before,
+  .aij-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .aij-section .aij-content,
+  .aij-section .aij-visual,
+  .aij-section .aij-highlight,
+  .aij-section .aij-floating-label {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+  }
+
+  .aij-section .aij-frame-path {
+    stroke-dashoffset: 0 !important;
+  }
+
+  .aij-section .aij-image-card,
+  .aij-section .aij-image {
+    transform: none !important;
+  }
+}

@@ -101,6 +101,6 @@ export const dataAnalyticsInterviewTrack = {
     ['Do I need both Python and Power BI?', 'They serve different needs. Python helps with reproducible cleaning and exploration. Power BI helps people interact with a report and make recurring decisions.'],
     ['How does the analytics mock interview work?', 'You’ll investigate a revenue decline, troubleshoot a reporting mismatch, and compare your reasoning with example feedback.'],
     ['Which project should I start with?', 'Start with the Sales Insights Dashboard to practice building and reconciling a few clear metrics. Then try the Operations KPI Tracker to explore reporting grain and data freshness.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

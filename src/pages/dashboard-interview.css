@@ -1,0 +1,89 @@
+.dashboard-interview{color:#17181c}.dashboard-interview *{box-sizing:border-box}.dashboard-interview-intro{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:20px;padding:24px 28px;border:1px solid #e5e5e9;border-radius:14px;background:#fff}.dashboard-interview-intro span{color:#bd5b12;font-size:11px;font-weight:800;letter-spacing:.12em}.dashboard-interview-intro h1{margin:8px 0 6px;font-size:32px;line-height:1.2;letter-spacing:-.025em}.dashboard-interview-intro p{margin:0;color:#777782;font-size:14px;line-height:1.5}.dashboard-interview-primary{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:9px;padding:12px 16px;border-radius:8px;background:#ed750c;box-shadow:0 8px 18px rgba(120,55,0,.22),0 2px 5px rgba(0,0,0,.12);color:#fff;font-size:13px;font-weight:650;text-decoration:none}.dashboard-interview-primary:hover{background:#d96105}.dashboard-interview-signals{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.dashboard-interview-signals article{min-width:0;min-height:90px;padding:16px 17px;border:1px solid #e6e6e9;border-radius:12px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.12),0 2px 5px rgba(0,0,0,.04)}.dashboard-interview-signal-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}.dashboard-interview-signal-heading h2{margin:0;font-size:14px;font-weight:650}.dashboard-interview-signal-heading svg{flex:none;color:#f4770b}.dashboard-interview-signals p{margin:8px 0 0;color:#777782;font-size:11px;line-height:1.45}.dashboard-interview-panels{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:18px;align-items:start}.dashboard-interview-panel{min-width:0;padding:20px;border:1px solid #e5e5e9;border-radius:14px;background:#fff;box-shadow:0 2px 5px #00000003,0 8px 20px -10px #00000018}.dashboard-interview-panel>h2{margin:0 0 15px;font-size:18px;font-weight:650;letter-spacing:-.025em}.dashboard-interview-process-content{display:grid;grid-template-columns:minmax(0,1fr) 145px;gap:16px;align-items:center}.dashboard-interview-process ol{margin:0;padding:0;list-style:none}.dashboard-interview-process li{display:flex;gap:12px;padding:11px 0;border-top:1px solid #eeeef0}.dashboard-interview-process li:first-child{border-top:0;padding-top:0}.dashboard-interview-process li>span{display:grid;flex:none;place-items:center;width:38px;height:38px;border-radius:9px;background:#fff0e3;color:#bd5b12;font-size:13px;font-weight:750}.dashboard-interview-process h3{margin:0 0 4px;font-size:13px;font-weight:650}.dashboard-interview-process p{margin:0;color:#777782;font-size:11px;line-height:1.5}.dashboard-interview-process img{display:block;width:100%;height:170px;object-fit:contain}.dashboard-interview-reviews blockquote{margin:0;padding:10px 0 10px 12px;border-top:1px solid #eeeef0;border-left:3px solid #f4770b}.dashboard-interview-reviews blockquote:first-of-type{border-top:0}.dashboard-interview-reviews blockquote p{margin:0 0 5px;font-size:12px;line-height:1.45}.dashboard-interview-reviews footer{color:#777782;font-size:11px}.dashboard-interview-panel-intro{margin:-8px 0 15px;color:#777782;font-size:12px;line-height:1.5}.dashboard-interview-benefits>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}.dashboard-interview-benefits article{position:relative;padding:13px 0;border-top:1px solid #eeeef0}.dashboard-interview-benefits article svg{position:absolute;right:0;top:12px;color:#f4770b}.dashboard-interview-benefits article h3{max-width:calc(100% - 24px);margin:0 0 4px;font-size:13px;font-weight:650}.dashboard-interview-benefits article p{margin:0;color:#777782;font-size:11px;line-height:1.45}.dashboard-interview-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.dashboard-interview-insights article{min-height:155px;padding:17px}.dashboard-interview-insights svg{margin-bottom:11px;color:#f4770b}.dashboard-interview-insights h2{margin:0 0 7px;font-size:14px}.dashboard-interview-insights p{margin:0;color:#777782;font-size:11px;line-height:1.5}@media(max-width:1150px){.dashboard-interview-signals{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-interview-panels{grid-template-columns:1fr}}@media(max-width:650px){.dashboard-interview-intro{align-items:flex-start;flex-direction:column;padding:20px}.dashboard-interview-intro h1{font-size:27px}.dashboard-interview-signals{grid-template-columns:1fr}.dashboard-interview-process-content{grid-template-columns:1fr}.dashboard-interview-process img{display:none}.dashboard-interview-benefits>div,.dashboard-interview-insights{grid-template-columns:1fr}}
+
+.dashboard-interview-process-content{display:block}
+.dashboard-interview-process li>span{width:auto;height:auto;min-width:18px;background:transparent;border-radius:0;font-size:13px}
+.dashboard-interview-reviews blockquote{padding-left:0;border-left:0}
+.dashboard-interview-benefits article h3{max-width:none}
+.dashboard-interview-signals article,.dashboard-interview-reviews{box-shadow:0 10px 26px rgba(244,119,11,.18),0 2px 6px rgba(244,119,11,.08)}
+.dashboard-interview-insights article{box-shadow:0 10px 24px rgba(0,0,0,.16),0 2px 5px rgba(0,0,0,.06)}
+.dashboard-interview-process,.dashboard-interview-benefits{box-shadow:0 10px 24px rgba(0,0,0,.16),0 2px 5px rgba(0,0,0,.06)}
+@media(min-width:1151px){.dashboard-interview-intro{margin-bottom:14px;padding:18px 22px}.dashboard-interview-intro h1{margin:5px 0 4px}.dashboard-interview-signals{gap:12px;margin-bottom:14px}.dashboard-interview-signals article{min-height:78px;padding:13px 15px}.dashboard-interview-panels{gap:14px}.dashboard-interview-panel{padding:16px 18px}.dashboard-interview-panel>h2{margin-bottom:10px}.dashboard-interview-process li{padding:8px 0}.dashboard-interview-reviews blockquote{padding-top:8px;padding-bottom:8px}.dashboard-interview-benefits article{padding:9px 0}.dashboard-interview-insights{gap:10px}.dashboard-interview-insights article{min-height:128px;padding:15px}}
+.dashboard-interview-reviews{grid-column:1/-1;order:3;box-shadow:0 10px 26px rgba(244,119,11,.14),0 2px 6px rgba(244,119,11,.06)}
+.dashboard-interview-process{order:1}.dashboard-interview-benefits{order:2}.dashboard-interview-insights{grid-column:1/-1;order:4}
+.dashboard-interview-review-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{min-width:0;min-height:145px;margin:0;padding:15px;border:1px solid #e6e6e9;border-radius:12px;background:#fff}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote.is-active{border-color:#f5c7a3;background:#fffaf6}
+.dashboard-interview-review-person{display:flex;align-items:center;gap:9px}
+.dashboard-interview-review-person span{display:grid;flex:none;place-items:center;width:33px;height:33px;border-radius:50%;background:#fff0e3;color:#e66f0b;font-size:11px;font-weight:800}
+.dashboard-interview-review-person strong{font-size:12px}
+.dashboard-interview-quote{display:block;height:25px;margin-top:5px;color:#f4770b;font-family:Georgia,serif;font-size:36px;line-height:1}
+.dashboard-interview-reviews .dashboard-interview-review-cards p{margin:0;font-size:12px;line-height:1.5}
+.dashboard-interview-review-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px}
+.dashboard-interview-review-controls>button{display:grid;place-items:center;width:30px;height:30px;border:1px solid #e6e6e9;border-radius:7px;background:#fff;color:#bd5b12;cursor:pointer}
+.dashboard-interview-review-controls>div{display:flex;gap:7px}
+.dashboard-interview-review-controls>div button{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#e9ded7;cursor:pointer}
+.dashboard-interview-review-controls>div button.is-active{background:#f4770b}
+@media(max-width:760px){.dashboard-interview-review-cards{grid-template-columns:1fr}.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{min-height:0}.dashboard-interview-reviews .dashboard-interview-review-cards blockquote:not(.is-active){display:none}}
+.dashboard-interview-review-cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#e5a975 transparent;padding:2px 2px 10px}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{flex:0 0 clamp(260px,38%,390px);scroll-snap-align:start}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote.is-active{border-color:#e6e6e9;background:#fff}
+@media(max-width:760px){.dashboard-interview-review-cards{display:flex}.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{display:block;flex-basis:min(85%,340px)}}
+.dashboard-interview-review-cards{position:relative;padding-inline:0;scroll-snap-type:x mandatory}
+.dashboard-interview-review-cards::before,.dashboard-interview-review-cards::after{content:'';flex:0 0 34%}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{flex-basis:32%;transition:border-color .25s,background-color .25s,box-shadow .25s,transform .25s}
+.dashboard-interview-reviews .dashboard-interview-review-cards blockquote.is-active{border-color:#f5c7a3;background:#fffaf6;box-shadow:0 8px 20px rgba(244,119,11,.12);transform:translateY(-2px)}
+@media(max-width:760px){.dashboard-interview-review-cards::before,.dashboard-interview-review-cards::after{flex-basis:12%}.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{flex-basis:76%}}
+@media(prefers-reduced-motion:reduce){.dashboard-interview-reviews .dashboard-interview-review-cards blockquote{transition:none}}
+.dashboard-interview-intro{padding:0;border:0;border-radius:0;background:transparent}
+.dashboard-interview :is(h1,h2,h3,p,strong,small),.dashboard-interview-intro span{color:#17181c}
+.dashboard-interview-review-cards{scrollbar-width:none;scroll-behavior:smooth}
+.dashboard-interview-review-cards::-webkit-scrollbar{display:none}
+@media(min-width:1151px){.dashboard-interview-intro{padding:0}}
+
+.dashboard-interview-signals article{min-height:130px}
+@media(min-width:1151px){.dashboard-interview-signals article{min-height:130px}}
+
+/* Match the Problems page heading. */
+.dashboard-interview-intro{padding:5px 0 28px;border:0;border-radius:0;background:transparent}
+.dashboard-interview-intro span{display:block;margin-bottom:12px;color:#686972;font-size:11px;font-weight:600;letter-spacing:.12em;line-height:1.5}
+.dashboard-interview-intro h1{margin:0;color:#17181d;font-size:clamp(27px,2.5vw,34px);font-weight:700;line-height:1.25;letter-spacing:-1px}
+.dashboard-interview-intro p{margin:10px 0 0;color:#656670;font-size:15px;font-weight:400;line-height:1.6}
+@media(min-width:1151px){.dashboard-interview-intro{padding:5px 0 28px;margin-bottom:20px}.dashboard-interview-intro h1{margin:0}}
+@media(max-width:650px){.dashboard-interview-intro{padding:0 0 22px}.dashboard-interview-intro span{font-size:10px}.dashboard-interview-intro h1{font-size:27px}.dashboard-interview-intro p{font-size:13px}}
+
+/* Fit the existing interview sections within shorter desktop viewports. */
+@media(min-width:1151px) and (max-height:850px){
+  .dashboard-interview-intro{padding:0 0 12px;margin-bottom:8px}
+  .dashboard-interview-intro span{margin-bottom:7px}
+  .dashboard-interview-intro p{margin-top:6px}
+  .dashboard-interview-signals{margin-bottom:10px}
+  .dashboard-interview-panels{gap:10px}
+  .dashboard-interview-panel{padding:13px 16px}
+  .dashboard-interview-panel>h2{margin-bottom:8px}
+  .dashboard-interview-process li{padding:6px 0}
+  .dashboard-interview-benefits article{padding:6px 0}
+  .dashboard-interview-panel-intro{margin-bottom:9px}
+  .dashboard-interview-reviews .dashboard-interview-review-cards blockquote{min-height:118px;padding:10px 12px}
+  .dashboard-interview-review-person span{width:27px;height:27px}
+  .dashboard-interview-quote{height:18px;margin-top:3px;font-size:29px}
+  .dashboard-interview-review-cards{padding-bottom:2px}
+}
+
+@media(min-width:1151px) and (min-height:851px){
+  .dashboard-interview-reviews{padding:22px 20px 24px}
+  .dashboard-interview-reviews .dashboard-interview-review-cards blockquote{min-height:170px;padding:18px}
+}
+
+/* Let the existing panels use the remaining desktop viewport space. */
+@media(min-width:1151px){
+  .dashboard-interview{display:flex;flex-direction:column;min-height:calc(100svh - 118px)}
+  .dashboard-interview-intro,.dashboard-interview-signals{flex:none}
+  .dashboard-interview-panels{flex:1;grid-template-rows:auto minmax(0,1fr);align-items:stretch}
+  .dashboard-interview-reviews{display:flex;flex-direction:column}
+  .dashboard-interview-review-cards{flex:1;align-items:stretch}
+  .dashboard-interview-reviews .dashboard-interview-review-cards blockquote{height:100%}
+}
+
+.dashboard-interview-signals article{display:flex;flex-direction:column;justify-content:center}
+.dashboard-interview-signals p{margin-top:10px;line-height:1.5}
+.dashboard-interview-signal-heading,.dashboard-interview-signals article>p{transform:translateY(-9px)}

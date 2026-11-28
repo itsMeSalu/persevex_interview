@@ -1,0 +1,1194 @@
+/* ========================================
+   ANTIINTERN COMPACT PRICING SECTION
+======================================== */
+
+.aip-section {
+  --aip-orange: #f49a42;
+  --aip-text: #252525;
+  --aip-muted: #686868;
+
+  width: 100%;
+  padding: 38px 30px 35px;
+
+  background: #ffffff;
+  color: var(--aip-text);
+
+  overflow: hidden;
+}
+
+.aip-section *,
+.aip-section *::before,
+.aip-section *::after {
+  box-sizing: border-box;
+}
+
+.aip-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   SECTION HEADER
+======================================== */
+
+.aip-header {
+  max-width: 1000px;
+
+  margin: 0 auto 22px;
+
+  text-align: center;
+}
+
+.aip-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #c76b20;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.aip-heading {
+  margin: 0 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 2.6vw, 35px);
+  font-weight: 400;
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+
+  color: #252525;
+}
+
+.aip-description {
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  color: #686868;
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   MONTHLY / YEARLY TOGGLE
+======================================== */
+
+.aip-billing-toggle {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: 174px;
+  height: 34px;
+
+  margin-top: 14px;
+  padding: 3px;
+
+  background: #f5f5f5;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 30px;
+
+  isolation: isolate;
+}
+
+.aip-toggle-slider {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: calc((100% - 6px) / 2);
+  height: calc(100% - 6px);
+
+  background: #b85b17;
+
+  border-radius: 25px;
+
+  z-index: -1;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aip-yearly-active .aip-toggle-slider {
+  transform: translateX(100%);
+}
+
+.aip-billing-toggle button {
+  position: relative;
+
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 25px;
+
+  background: transparent;
+
+  color: #555555;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.aip-billing-toggle button.aip-active {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   THREE COLUMN GRID
+======================================== */
+
+.aip-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap: 16px;
+}
+
+.aip-card-wrapper {
+  display: flex;
+
+  min-width: 0;
+
+  perspective: 1600px;
+}
+
+
+/* ========================================
+   COMPACT PRICING CARD
+======================================== */
+
+.aip-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 18px;
+
+  background: #f5f5f5;
+
+  border: 1px solid #ededed;
+  border-radius: 14px;
+
+  color: #252525;
+
+  isolation: isolate;
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.55s ease,
+    border-color 0.4s ease;
+}
+
+
+/* ========================================
+   CARD COLOR COMBINATION
+======================================== */
+
+.aip-card-launch,
+.aip-card-elite {
+  background: #f5f5f5;
+}
+
+.aip-card-accelerator {
+  background: linear-gradient(
+    135deg,
+    #f5b35d 0%,
+    #f5a34b 50%,
+    #f49339 100%
+  );
+
+  border-color: transparent;
+
+  color: #302216;
+}
+
+
+/* ========================================
+   SUBTLE INTERACTIVE LIGHT EFFECT
+======================================== */
+
+.aip-card-light {
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(
+    280px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.55),
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  transition: opacity 0.5s ease;
+}
+
+
+/* ========================================
+   PLAN NAME AND BADGE
+======================================== */
+
+.aip-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+.aip-plan-name {
+  margin: 0;
+
+  color: inherit;
+
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.aip-plan-badge {
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  background: #ffead5;
+
+  color: #a95013;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.aip-card-accelerator .aip-plan-badge {
+  background: #ffffff;
+
+  color: #a95013;
+}
+
+
+/* ========================================
+   PLAN PRICE
+======================================== */
+
+.aip-price-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  min-height: 40px;
+
+  margin-bottom: 5px;
+}
+
+.aip-price {
+  color: inherit;
+
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+}
+
+.aip-price-period {
+  color: #666666;
+
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.aip-card-accelerator .aip-price-period {
+  color: #503019;
+}
+
+.aip-yearly-price {
+  align-self: center;
+
+  color: inherit;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ========================================
+   PLAN DESCRIPTION
+======================================== */
+
+.aip-plan-description {
+  min-height: 34px;
+
+  margin: 0 0 10px;
+
+  color: #666666;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.aip-card-accelerator .aip-plan-description {
+  color: #503019;
+}
+
+
+/* ========================================
+   INCLUDED CREDITS
+======================================== */
+
+.aip-credit-panel {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-height: 74px;
+
+  padding: 9px 11px;
+
+  margin-bottom: 12px;
+
+  background: #ebebeb;
+
+  border-radius: 8px;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.aip-credit-title {
+  color: #666666;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.aip-credit-value {
+  margin: 0;
+
+  color: #252525;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.aip-credit-value strong {
+  font-weight: 700;
+}
+
+.aip-session-credits {
+  color: #666666;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.aip-card-accelerator .aip-credit-panel {
+  background: rgba(255, 255, 255, 0.30);
+}
+
+.aip-card-accelerator .aip-credit-title,
+.aip-card-accelerator .aip-credit-value,
+.aip-card-accelerator .aip-session-credits {
+  color: #382517;
+}
+
+
+/* ========================================
+   CTA BUTTON
+======================================== */
+
+.aip-plan-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 33px;
+
+  padding: 7px 30px;
+
+  margin-bottom: 14px;
+
+  border: 1px solid #999999;
+  border-radius: 30px;
+
+  background: transparent;
+
+  color: #333333;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  text-align: center;
+  text-decoration: none;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.aip-card-accelerator .aip-plan-button {
+  background: #ffffff;
+
+  border-color: #ffffff;
+
+  color: #252525;
+}
+
+.aip-plan-button:hover {
+  background: #b85b17;
+
+  border-color: #b85b17;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.aip-card-accelerator .aip-plan-button:hover {
+  background: #fff2e4;
+
+  border-color: #fff2e4;
+
+  color: #a95013;
+}
+
+
+/* ========================================
+   ANIMATED BUTTON TEXT
+======================================== */
+
+.aip-button-text {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aip-plan-button:hover .aip-button-text,
+.aip-plan-button:focus-visible .aip-button-text {
+  transform: translateX(-5px);
+}
+
+
+/* ========================================
+   PROFESSIONAL ARROW ANIMATION
+======================================== */
+
+.aip-button-arrow {
+  position: absolute;
+
+  right: 15px;
+
+  font-size: 16px;
+  line-height: 1;
+
+  opacity: 0;
+
+  transform: translateX(-12px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aip-plan-button:hover .aip-button-arrow,
+.aip-plan-button:focus-visible .aip-button-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* ========================================
+   BUTTON LIGHT SWEEP
+======================================== */
+
+.aip-plan-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 55%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+
+  pointer-events: none;
+
+  transition: left 0.7s ease;
+}
+
+.aip-plan-button:hover::before {
+  left: 150%;
+}
+
+
+/* ========================================
+   FEATURES HEADING
+======================================== */
+
+.aip-features-heading {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   FEATURES LIST
+======================================== */
+
+.aip-feature-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding: 0;
+
+  margin: 0 0 12px;
+
+  list-style: none;
+}
+
+.aip-feature-list li {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  color: #414141;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.aip-feature-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 12px;
+  height: 12px;
+
+  margin-top: 2px;
+
+  background: #e6e6e6;
+
+  border-radius: 50%;
+
+  color: #666666;
+
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.aip-card-accelerator .aip-feature-list li {
+  color: #382517;
+}
+
+.aip-card-accelerator .aip-feature-check {
+  background: #ffffff;
+
+  color: #b45b18;
+}
+
+
+/* ========================================
+   PLAN NOTE
+======================================== */
+
+.aip-plan-note {
+  margin: auto 0 0;
+
+  padding-top: 10px;
+
+  border-top: 1px solid #dddddd;
+
+  color: #666666;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.aip-card-accelerator .aip-plan-note {
+  border-top-color: rgba(80, 48, 25, 0.2);
+
+  color: #503019;
+}
+
+
+/* ========================================
+   BOTTOM CREDIT INFORMATION
+======================================== */
+
+.aip-bottom-info {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+
+  margin-top: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.aip-info-item:first-child {
+  padding-right: 20px;
+
+  border-right: 1px solid #eeeeee;
+}
+
+.aip-info-item h3 {
+  position: relative;
+
+  margin: 0 0 5px;
+
+  color: #252525;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.aip-info-item h3::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -3px;
+  left: 0;
+
+  width: 0;
+  height: 1px;
+
+  background: #f49a42;
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.aip-info-item:hover h3::after {
+  width: 45px;
+}
+
+.aip-info-item p {
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   CINEMATIC HEADER REVEAL
+======================================== */
+
+.aip-animation-ready .aip-header {
+  opacity: 0;
+
+  transform: translateY(25px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aip-animation-ready.aip-animated .aip-header {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   STAGGERED 3D CARD ENTRANCE
+======================================== */
+
+.aip-animation-ready .aip-card-wrapper {
+  opacity: 0;
+
+  transform:
+    perspective(1600px)
+    translate3d(0, 45px, -70px)
+    rotateX(9deg);
+}
+
+.aip-animation-ready.aip-animated .aip-card-wrapper {
+  animation:
+    aipCardEntrance
+    1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    calc(120ms + var(--card-delay))
+    both;
+}
+
+@keyframes aipCardEntrance {
+  from {
+    opacity: 0;
+
+    transform:
+      perspective(1600px)
+      translate3d(0, 45px, -70px)
+      rotateX(9deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      perspective(1600px)
+      translate3d(0, 0, 0)
+      rotateX(0deg);
+  }
+}
+
+
+/* ========================================
+   PRICE CHANGE ANIMATION
+======================================== */
+
+.aip-animated .aip-price-row {
+  animation:
+    aipPriceReveal
+    0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes aipPriceReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   STAGGERED FEATURE REVEAL
+======================================== */
+
+.aip-animation-ready .aip-feature-list li {
+  opacity: 0;
+
+  transform: translateX(-8px);
+}
+
+.aip-animation-ready.aip-animated .aip-feature-list li {
+  animation:
+    aipFeatureReveal
+    0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    calc(
+      300ms +
+      var(--card-delay) +
+      var(--feature-delay)
+    )
+    both;
+}
+
+@keyframes aipFeatureReveal {
+  from {
+    opacity: 0;
+
+    transform: translateX(-8px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+/* ========================================
+   INTERACTIVE 3D HOVER ANIMATION
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .aip-card-wrapper:hover .aip-card {
+    transform:
+      translateY(-6px)
+      rotateX(var(--rotate-x))
+      rotateY(var(--rotate-y));
+
+    border-color: #e2d6c9;
+
+    box-shadow:
+      0 18px 35px rgba(0, 0, 0, 0.08);
+  }
+
+  .aip-card-wrapper:hover .aip-card-accelerator {
+    border-color: transparent;
+
+    box-shadow:
+      0 18px 35px rgba(244, 154, 66, 0.23);
+  }
+
+  .aip-card-wrapper:hover .aip-card-light {
+    opacity: 1;
+  }
+
+  .aip-card-wrapper:hover .aip-credit-panel {
+    transform: translateY(-2px);
+
+    background: #e6e6e6;
+  }
+
+  .aip-card-wrapper:hover
+  .aip-card-accelerator
+  .aip-credit-panel {
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+}
+
+
+/* ========================================
+   BOTTOM INFORMATION REVEAL
+======================================== */
+
+.aip-animation-ready .aip-bottom-info {
+  opacity: 0;
+
+  transform: translateY(18px);
+}
+
+.aip-animation-ready.aip-animated .aip-bottom-info {
+  animation:
+    aipBottomReveal
+    0.85s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    650ms
+    both;
+}
+
+@keyframes aipBottomReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   SMALL DESKTOP / LAPTOP SCREEN
+======================================== */
+
+@media (min-width: 901px) and (max-height: 800px) {
+
+  .aip-section {
+    padding: 25px 30px;
+  }
+
+  .aip-header {
+    margin-bottom: 16px;
+  }
+
+  .aip-heading {
+    font-size: 29px;
+  }
+
+  .aip-card {
+    padding: 15px;
+  }
+
+  .aip-price {
+    font-size: 30px;
+  }
+
+  .aip-feature-list {
+    gap: 5px;
+  }
+
+  .aip-credit-panel {
+    min-height: 65px;
+
+    padding: 7px 10px;
+  }
+
+  .aip-bottom-info {
+    margin-top: 14px;
+    padding-top: 10px;
+  }
+
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .aip-section {
+    padding: 45px 22px;
+  }
+
+  .aip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+
+  .aip-card-wrapper:last-child {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 8px);
+
+    justify-self: center;
+  }
+
+  .aip-heading {
+    font-size: 30px;
+  }
+
+  .aip-card {
+    padding: 20px;
+  }
+
+  .aip-feature-list li {
+    font-size: 12px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .aip-section {
+    padding: 40px 18px;
+  }
+
+  .aip-heading {
+    font-size: 28px;
+  }
+
+  .aip-description {
+    font-size: 12px;
+  }
+
+  .aip-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .aip-card-wrapper:last-child {
+    grid-column: auto;
+
+    width: 100%;
+  }
+
+  .aip-card {
+    padding: 22px;
+  }
+
+  .aip-plan-name {
+    font-size: 20px;
+  }
+
+  .aip-price {
+    font-size: 36px;
+  }
+
+  .aip-plan-description {
+    min-height: auto;
+
+    font-size: 12px;
+  }
+
+  .aip-feature-list {
+    gap: 9px;
+  }
+
+  .aip-feature-list li {
+    font-size: 12px;
+  }
+
+  .aip-plan-button {
+    min-height: 40px;
+  }
+
+  .aip-bottom-info {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .aip-info-item:first-child {
+    padding-right: 0;
+    padding-bottom: 15px;
+
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+}
+
+
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
+
+.aip-section button:focus-visible,
+.aip-section a:focus-visible {
+  outline: 2px solid #a95013;
+
+  outline-offset: 3px;
+}
+
+.aip-animation-ready:focus-within .aip-header,
+.aip-animation-ready:focus-within .aip-card-wrapper,
+.aip-animation-ready:focus-within .aip-feature-list li,
+.aip-animation-ready:focus-within .aip-bottom-info {
+  opacity: 1;
+
+  transform: none;
+
+  animation: none;
+
+  transition-delay: 0ms;
+}
+
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .aip-section *,
+  .aip-section *::before,
+  .aip-section *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+  .aip-section .aip-header,
+  .aip-section .aip-card-wrapper,
+  .aip-section .aip-card,
+  .aip-section .aip-feature-list li,
+  .aip-section .aip-bottom-info,
+  .aip-section .aip-price-row {
+    opacity: 1 !important;
+
+    transform: none !important;
+  }
+
+  .aip-card-wrapper:hover .aip-credit-panel,
+  .aip-plan-button:hover,
+  .aip-plan-button:hover .aip-button-text {
+    transform: none;
+  }
+
+  .aip-card-light,
+  .aip-plan-button::before {
+    display: none;
+  }
+
+}

@@ -82,6 +82,6 @@ export const autocadInterviewTrack = {
     ['Should I learn 2D drafting before 3D modeling?', 'Start with units, coordinates, and closed 2D profiles. Those skills make it easier to create and verify 3D geometry.'],
     ['How does the AutoCAD mock interview work?', 'You’ll troubleshoot a plotted drawing with the wrong scale, then explain which checks matter before handoff.'],
     ['Which project is a good starting point?', 'Try a floor plan to practice layers and plotting, or a simple bracket to connect 2D drafting with 3D modeling.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

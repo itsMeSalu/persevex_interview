@@ -1,0 +1,14 @@
+.reviews-page > section {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.reviews-page > section :is(h1, h2, h3, h4) {
+  font-family: inherit;
+  font-weight: revert-layer;
+  letter-spacing: revert-layer;
+}
+.reviews-page > section[id] { scroll-margin-top: 100px; }
+.reviews-page :focus-visible { outline: 2px solid #fa7405; outline-offset: 4px; }
+.reviews-page button:disabled { cursor: not-allowed; opacity: .6; }
+@media (prefers-reduced-motion: reduce) {
+  .reviews-page [data-testimonial-right] { overflow-x: auto; }
+}

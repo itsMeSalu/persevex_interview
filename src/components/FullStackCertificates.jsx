@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CertificatePreview from './CertificatePreview.jsx'
-import certificateQr from '../assets/certificates/persevex-direct-qr.svg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -10,7 +9,7 @@ export const certificates = [
   {
     id: 'course-completion',
     title: 'Course Completion Certificate',
-    description: 'Recognizes completion of the Persevex course after you finish the required lessons, assignments, and learning milestones.',
+    description: 'Recognizes completion of the AntIntern course after you finish the required lessons, assignments, and learning milestones.',
   },
   {
     id: 'internship',
@@ -65,8 +64,7 @@ export default function FullStackCertificates({ trackTitle = 'Full Stack', progr
                 <a href={`${certificateDetailsUrl}#${id}`} aria-label={`View details for the ${title}`} className="group relative grid aspect-[1.42] place-items-center overflow-hidden rounded-lg bg-[#faf7f4] p-1.5">
                   <CertificatePreview title={title} programTitle={program ? trackTitle : undefined} />
                   <span className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#211b17cc] px-3 text-center text-white opacity-0 transition-opacity group-focus-visible:opacity-100 group-hover:opacity-100 motion-reduce:transition-none pointer-coarse:items-end pointer-coarse:justify-end pointer-coarse:bg-transparent pointer-coarse:p-2 pointer-coarse:opacity-100">
-                    <img src={certificateQr} alt="" width="56" height="56" className="size-11 rounded-sm bg-white p-0.5 lg:size-14 pointer-coarse:hidden" />
-                    <span className="text-sm font-extrabold lg:text-lg pointer-coarse:hidden">Scan Certificate</span>
+                    
                     <span className="rounded-lg bg-[#ad4019] px-3 py-2 text-xs font-bold text-white lg:text-sm">View Details <span aria-hidden="true">→</span></span>
                   </span>
                 </a>

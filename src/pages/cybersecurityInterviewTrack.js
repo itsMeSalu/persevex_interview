@@ -101,6 +101,6 @@ export const cybersecurityInterviewTrack = {
     ['Do I need programming experience to start?', 'Start with networking, operating systems, and logs. Basic scripting becomes useful when you need to parse records or automate a defensive report.'],
     ['How does the cybersecurity mock interview work?', 'You’ll investigate an unusual sign-in, answer a follow-up on containment and evidence, then compare your approach with example feedback.'],
     ['What projects can I discuss in an interview?', 'Use a monitoring dashboard, hardening review, or an incident tabletop to explain how you assessed risk, chose controls, and tested your decisions.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is a practice exercise. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is a practice exercise. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

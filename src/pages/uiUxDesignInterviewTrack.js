@@ -102,6 +102,6 @@ export const uiUxDesignInterviewTrack = {
     ['Do I need prior design experience?', 'You can start with a simple flow and a small research question. Learn Figma alongside fundamentals like hierarchy, accessibility, and usability.'],
     ['How does the UI/UX mock interview work?', 'You’ll investigate onboarding drop-off, respond to a follow-up about a usability test, and compare your reasoning with example feedback.'],
     ['Which projects are useful for a design portfolio?', 'Onboarding, a dashboard, or a research case study can all work. Choose a project with a clear user problem, documented decisions, and evidence from testing.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the requirements of the applicable course or internship.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the requirements of the applicable course or internship.'],
   ],
 }

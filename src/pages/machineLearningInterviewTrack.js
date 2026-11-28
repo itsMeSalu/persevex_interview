@@ -101,6 +101,6 @@ export const machineLearningInterviewTrack = {
     ['How much Python and math should I know?', 'Start with Python data manipulation, probability, and basic statistics. Use the curriculum to connect those fundamentals to model behavior and evaluation.'],
     ['How does the mock interview work?', 'You’ll diagnose a churn model that misses most cancellations, answer a follow-up about leakage and monitoring, and compare your reasoning with example feedback.'],
     ['Which project should I start with?', 'Start with sentiment analysis or churn prediction to practice a clear baseline and evaluation plan. Move on to recommendations, vision, forecasting, or the chatbot once you can explain your approach.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is a practice exercise. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is a practice exercise. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

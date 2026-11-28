@@ -1,0 +1,25 @@
+/* Keep the reference layout while using AntIntern typography and focus colors. */
+.features-page > section {
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.features-page > section :is(h1, h2, h3, h4) {
+  font-family: inherit;
+  font-weight: revert-layer;
+  letter-spacing: revert-layer;
+}
+
+.features-page > section[id] {
+  scroll-margin-top: 100px;
+}
+
+.features-page > section :focus-visible {
+  outline: 2px solid #F59120;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .features-page > section .animate-ping {
+    animation: none;
+  }
+}

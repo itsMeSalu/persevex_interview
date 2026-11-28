@@ -4,7 +4,7 @@ import { certificates } from '../components/FullStackCertificates.jsx'
 import SiteFooter from '../components/SiteFooter.jsx'
 import logo from '../assets/antintern-logo.svg'
 
-const contactUrl = 'mailto:support@persevex.com?subject=Certificate%20eligibility'
+const contactUrl = 'mailto:support@antintern.com?subject=Certificate%20eligibility'
 
 const programDetails = {
   'logistics-supply-chain': ['Logistics & Supply Chain Management', 'Logistics & Supply Chain'],
@@ -35,7 +35,7 @@ export default function CertificateDetailsPage() {
   const program = Object.hasOwn(programDetails, requestedProgram) ? requestedProgram : 'web-development'
   const [programTitle, shortTitle, interviewSlug = program] = programDetails[program]
   const returnToTrack = `/interviews/${interviewSlug}#certificates`
-  const enrollmentUrl = `https://www.persevex.com/courses/${program}`
+  const enrollmentUrl = '/#interviews'
 
   const [selectedId, setSelectedId] = useState(() => window.location.hash.slice(1))
   const selected = certificates.find(({ id }) => id === selectedId) ?? certificates[0]
@@ -66,7 +66,7 @@ export default function CertificateDetailsPage() {
                 Explore {shortTitle} <span className="brand-gradient-text">certificates.</span>
               </h1>
               <p className="mt-5 max-w-[52ch] leading-relaxed text-[#614e44] sm:text-lg">
-                Explore sample certificates for course completion, internship completion, and outstanding performance. Each recognizes a different milestone in the Persevex program.
+                Explore sample certificates for course completion, internship completion, and outstanding performance. Each recognizes a different milestone in the AntIntern program.
               </p>
               <CertificateActions enrollmentUrl={enrollmentUrl} />
             </div>
@@ -108,7 +108,7 @@ export default function CertificateDetailsPage() {
             </div>
             <ul className="grid gap-3">
               {[
-                'Finish the required lessons and assignments in your Persevex program.',
+                'Finish the required lessons and assignments in your AntIntern program.',
                 'Complete the practical work and projects required for your certificate.',
                 'Use the QR code on your issued certificate to access its digital details.',
               ].map((step) => (
@@ -127,7 +127,7 @@ export default function CertificateDetailsPage() {
               Ready to earn your <span className="brand-gradient-text">certificate?</span>
             </h2>
             <p className="mx-auto mt-3 max-w-[57ch] leading-relaxed text-[#614e44]">
-              Explore the Persevex {programTitle} program or talk to the team about enrollment and certificate eligibility.
+              Explore the AntIntern {programTitle} program or talk to the team about enrollment and certificate eligibility.
             </p>
             <CertificateActions centered enrollmentUrl={enrollmentUrl} />
           </div>

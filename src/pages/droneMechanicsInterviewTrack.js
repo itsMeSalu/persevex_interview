@@ -80,6 +80,6 @@ export const droneMechanicsInterviewTrack = {
     ['Do I need to have flown a drone before?', 'You can start with component identification, a simulator, and supervised assembly or inspection exercises. Flight experience can help put those lessons in context.'],
     ['How does the mock interview work?', 'You’ll investigate a vibration on a trainer, explain your inspection priorities, and compare your reasoning with example feedback.'],
     ['Which project is a good starting point?', 'Start with frame inspection or a flight-controller simulation so you can explain the role of each major subsystem.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

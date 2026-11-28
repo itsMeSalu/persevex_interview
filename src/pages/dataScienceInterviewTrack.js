@@ -82,6 +82,6 @@ export const dataScienceInterviewTrack = {
     ['How much coding and statistics should I know?', 'Start with Python data manipulation, SQL joins and aggregations, and basic probability. Then practice interpreting confidence intervals and explaining trade-offs.'],
     ['How does the data science mock interview work?', 'You’ll investigate a conversion lift, respond to a follow-up about device-level results, and compare your reasoning with example feedback.'],
     ['Which project is a good starting point?', 'Start with the KPI dashboard to practice turning a question into a clear analysis. Then try forecasting or segmentation to practice model validation.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the requirements of the course or internship.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the requirements of the course or internship.'],
   ],
 }

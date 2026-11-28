@@ -1,0 +1,50 @@
+@keyframes career-blue-light { from { stop-color: #ebc8a9; } to { stop-color: #fff7ef; } }
+@keyframes career-blue-mid { from { stop-color: #ebc8a9; } to { stop-color: #ebc8a9; } }
+@keyframes career-blue-edge { from { stop-color: #e6bd9b; } to { stop-color: #e9e9e9; } }
+@keyframes career-copy-rise {
+  from { opacity: 0; transform: translate3d(0, 28px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes position-detail-rise { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes culture-rise { from { opacity: 0; transform: translate3d(0, 30px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+@keyframes culture-wave-drift { from { transform: translateX(-1.5%) scaleY(.95); } to { transform: translateX(1.5%) scaleY(1.08); } }
+@keyframes culture-wave-blue { from { stop-color: #ebc8a9; } to { stop-color: #ebc8a9; } }
+@keyframes culture-wave-pearl { from { stop-color: #fff7ef; } to { stop-color: #ebc8a9; } }
+@keyframes culture-wave-cyan { from { stop-color: #ebc8a9; } to { stop-color: #ebc8a9; } }
+.careers-page { --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+.careers-page > :not(.company-footer) :is(h1,h2,h3,h4) { font-family: inherit; font-weight: revert-layer; letter-spacing: revert-layer; }
+.careers-page [id] { scroll-margin-top: 92px; }
+.careers-page .company-footer { --font-sans: var(--font-dm-sans), system-ui, sans-serif; font-family: var(--font-dm-sans), system-ui, sans-serif; }
+
+/* Fill spaces below shorter cards instead of stretching neighboring rows. */
+.careers-page .positions-grid[data-masonry] { grid-auto-rows: 1px; grid-auto-flow: row dense; row-gap: 0; }
+.careers-page .positions-grid[data-masonry] > .position-card { margin-bottom: 20px; }
+
+/* Editorial reading sizes consistent with Reviews and Blogs. */
+.careers-page .careers-hero__copy>p{font-size:clamp(16px,.2vw + 15px,18px);line-height:1.8;color:#856b56;max-width:660px}
+.careers-page .careers-hero__eyebrow{font-size:13px;letter-spacing:.13em}
+.careers-page .careers-button{font-size:14px;line-height:1.5;min-height:46px}
+.careers-page .careers-benefits__heading>p,.careers-page .careers-culture__description{font-size:clamp(16px,.25vw + 15px,18px);line-height:1.8;color:#856b56}
+.careers-page .career-benefit h3,.careers-page .careers-culture__point h3{font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-.02em}
+.careers-page .career-benefit p,.careers-page .careers-culture__point p{font-size:16px;line-height:1.8;color:#8b7360}
+.careers-page .positions-banner p{font-size:17px;line-height:1.75;color:#fff7ef}
+.careers-page .positions-banner__count{font-size:13px;line-height:1.5}
+.careers-page .positions-search input,.careers-page .positions-search button,.careers-page .positions-filters select{font-size:15px;line-height:1.5}
+.careers-page .positions-filters label,.careers-page .positions-remote,.careers-page .positions-results-bar{font-size:13px;line-height:1.6}
+.careers-page .position-card h3{font-size:20px;font-weight:600;line-height:1.4;letter-spacing:-.02em}
+.careers-page .position-card__department,.careers-page .position-card__meta,.careers-page .position-card__stipend{font-size:13px;line-height:1.6;color:#997c64}
+.careers-page .position-card__details>p,.careers-page .position-card__details ul{font-size:16px;line-height:1.8;color:#856b56}
+.careers-page .position-card__details h4{font-size:16px;font-weight:600;line-height:1.5}
+.careers-page .position-card__apply{font-size:14px;line-height:1.5;min-height:44px}
+@media(max-width:520px){.careers-page .careers-hero__copy>p,.careers-page .careers-benefits__heading>p,.careers-page .careers-culture__description{font-size:16px}.careers-page .career-benefit h3,.careers-page .position-card h3,.careers-page .careers-culture__point h3{font-size:18px}.careers-page .positions-banner__count{position:static;display:block;margin-top:18px}}
+
+.careers-page .position-card {
+  border-color: #d9b89c;
+  box-shadow: 0 3px 0 #ead3bf, 0 12px 25px #75421f1c;
+  transition: border-color .25s, box-shadow .25s;
+}
+.careers-page .position-card:hover,
+.careers-page .position-card:focus-within {
+  border-color: #e49350;
+  box-shadow: 0 4px 0 #e7c09d, 0 18px 32px #75421f26;
+}

@@ -75,6 +75,6 @@ export const hybridVehiclesInterviewTrack = {
     ['How is a hybrid different from a battery-electric vehicle?', 'A hybrid combines an engine and an electric drive system. A battery-electric vehicle uses electricity for propulsion without a combustion engine.'],
     ['How does the mock interview work?', 'You’ll explain why regenerative braking can be limited, answer a diagnostic follow-up, and compare your reasoning with example feedback.'],
     ['Which projects can I discuss in an interview?', 'The battery study helps you explain pack assumptions and limits. The powertrain simulation helps you explain drive cycles, losses, and energy recovery.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the course or internship requirements.'],
   ],
 }

@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+.support-page { font-family: var(--font-support-inter), Inter, sans-serif; }
+.support-page > section :is(h1, h2, h3, h4) {
+  font-family: inherit;
+  font-weight: revert-layer;
+  letter-spacing: revert-layer;
+}
+.support-page section[id] { scroll-margin-top: 100px; }
+.support-page .support-primary-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: #fa7405;
+  padding: 12px 24px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background .3s;
+}
+.support-page .support-primary-button:hover { background: #e85f00; }
+.support-page .support-ticket-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #595959;
+  font-size: 13px;
+  font-weight: 500;
+}
+.support-page .support-ticket-form :is(input, select, textarea) {
+  width: 100%;
+  border: 1px solid #f4cfac;
+  border-radius: 12px;
+  background: white;
+  padding: 12px 16px;
+  color: #252525;
+  font: inherit;
+  font-size: 14px;
+}
+.support-page .support-ticket-form :is(input, textarea)::placeholder { color: #808080; }
+.support-page :focus-visible { outline: 2px solid #fa7405; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .support-page *, .support-page *::before, .support-page *::after { scroll-behavior: auto !important; }
+}

@@ -9,7 +9,7 @@ const questions = [
   ['How does the mock interview demo work?', 'You’ll get a React debugging prompt and a follow-up question. You can type your answer or practice aloud, then compare your reasoning with the example feedback.'],
   ['Where should I start if I’m new to full-stack development?', 'Start with the first curriculum module and trace a request from the browser to the server. Then practice HTML, CSS, and JavaScript before moving into React and backend APIs.'],
   ['Which projects can I discuss in an interview?', 'The Projects section includes a responsive portfolio, a React search dashboard, and API and database exercises. Pick a project you can explain end to end, including one trade-off and how you tested it.'],
-  ['Does completing the mock interview earn a certificate?', 'The mock interview is a practice exercise. Persevex certificates have separate course, internship, or performance requirements. See the Certificates section for the official eligibility details.'],
+  ['Does completing the mock interview earn a certificate?', 'The mock interview is a practice exercise. AntIntern certificates have separate course, internship, or performance requirements. See the Certificates section for the official eligibility details.'],
 ]
 
 export default function FullStackFaq({ entries = questions, trackTitle = 'Full Stack' }) {

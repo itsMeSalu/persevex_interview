@@ -166,7 +166,7 @@ export default function HowItWorks() {
               {active === 1 && (
                 <>
                   <div data-workflow-layer className="absolute top-[28%] left-[11%] w-[59%] overflow-hidden rounded-xl border border-[#eadfd7] bg-white text-[clamp(0.58rem,1.2vw,0.94rem)] shadow-lg">
-                    <div className="bg-[#fcf1e8] px-[7%] py-[5%] font-semibold">Persevex prep session</div>
+                    <div className="bg-[#fcf1e8] px-[7%] py-[5%] font-semibold">AntIntern prep session</div>
                     <div className="space-y-3 p-[7%] leading-relaxed">
                       <p className="text-[#68564a]">Target role <strong className="text-[#14223a]">Backend developer</strong></p>
                       <p>Let’s practice explaining trade-offs in a system that processes repeated requests.</p>

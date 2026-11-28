@@ -82,6 +82,6 @@ export const iotInterviewTrack = {
     ['Can I start before I have hardware?', 'Yes. Use a simulator or sample telemetry to practice message handling, dashboards, and offline behavior. Hardware adds practical work on calibration, power, and connectivity.'],
     ['How does the IoT mock interview work?', 'You’ll work through a weather station losing Wi-Fi, then explain buffering, ordering, and duplicate delivery before reviewing example feedback.'],
     ['Which project is a good starting point?', 'Use the Weather Monitoring Station to practice telemetry and dashboards, or the smart home demo to practice device commands and acknowledgments.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the applicable course or internship requirements.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the applicable course or internship requirements.'],
   ],
 }

@@ -82,6 +82,6 @@ export const androidDevelopmentInterviewTrack = {
     ['Where should I start if I’m new to Android?', 'Start with a simple Kotlin screen and one user action. Then add navigation, local persistence, and an API call so you can explain how the pieces fit together.'],
     ['How does the Android mock interview work?', 'You’ll design offline task creation, answer a follow-up about duplicate retries, and compare your reasoning with example feedback.'],
     ['Which project is a good starting point?', 'Start with the Expense Tracker to practice local data and screen state. Try the Task Planner next to explain durable background work and offline behavior.'],
-    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. Persevex certificate eligibility depends on the requirements of the applicable course or internship.'],
+    ['Does the mock interview qualify me for a certificate?', 'The mock interview is for practice. AntIntern certificate eligibility depends on the requirements of the applicable course or internship.'],
   ],
 }

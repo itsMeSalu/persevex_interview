@@ -101,6 +101,6 @@ export const cloudInterviewTrack = {
     ['Do I need experience with every cloud provider?', 'Start with one provider so you can explain a design in detail. Then map the same compute, storage, networking, and identity concepts to the other providers.'],
     ['How does the cloud mock interview work?', 'You’ll reason through an availability-zone failure, answer a follow-up about monitoring and testing, and compare your answer with example feedback.'],
     ['Which project is a good place to start?', 'Start with static hosting if you are new to cloud deployments. Move on to the three-tier application to practice networking, load balancing, and database decisions together.'],
-    ['Does the mock interview qualify me for a certificate?', 'The demo is for practice. Persevex assesses certificate eligibility against the requirements of its course or internship. Check Certificate Details for the available certificate types.'],
+    ['Does the mock interview qualify me for a certificate?', 'The demo is for practice. AntIntern assesses certificate eligibility against the requirements of its course or internship. Check Certificate Details for the available certificate types.'],
   ],
 }

@@ -102,6 +102,6 @@ export const artificialIntelligenceInterviewTrack = {
     ['How much Python and math do I need?', 'Start with basic Python, vectors, matrices, and probability. Practice explaining how these ideas show up in features, gradients, and evaluation.'],
     ['How does the AI mock interview work?', 'You’ll diagnose a support assistant that answers without enough evidence, then explain fallback and monitoring choices before reviewing example feedback.'],
     ['Which project should I start with?', 'Sentiment analysis is a manageable first project for practicing labels, baselines, and metrics. Move on to a chatbot or vision task when you are comfortable evaluating errors.'],
-    ['Does the mock interview qualify me for a certificate?', 'The demo is for interview practice. Persevex certificate eligibility depends on the requirements of the applicable course or internship.'],
+    ['Does the mock interview qualify me for a certificate?', 'The demo is for interview practice. AntIntern certificate eligibility depends on the requirements of the applicable course or internship.'],
   ],
 }

@@ -1,0 +1,774 @@
+/* ==========================================
+   ANTINTERN NEWSLETTER SECTION
+========================================== */
+
+.ant-newsletter-section {
+  --newsletter-orange: #ff8a19;
+  --newsletter-orange-dark: #f56608;
+  --newsletter-text: #171717;
+  --newsletter-muted: #737373;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 420px;
+
+  padding: 85px 24px 100px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  font-family: inherit;
+}
+
+.ant-newsletter-section *,
+.ant-newsletter-section *::before,
+.ant-newsletter-section *::after {
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.ant-newsletter-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  perspective: 1400px;
+}
+
+.ant-newsletter-content {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   TOP LABEL
+========================================== */
+
+.ant-newsletter-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: var(--newsletter-orange-dark);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+
+/* ==========================================
+   MAIN HEADING
+========================================== */
+
+.ant-newsletter-heading {
+  max-width: 1150px;
+
+  margin: 0 0 20px;
+
+  color: var(--newsletter-text);
+
+  font-family: inherit;
+
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 600;
+
+  line-height: 1.18;
+
+  letter-spacing: -1.8px;
+}
+
+.ant-newsletter-mobile-break {
+  display: none;
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.ant-newsletter-description {
+  max-width: 760px;
+
+  margin: 0 auto 32px;
+
+  color: var(--newsletter-muted);
+
+  font-size: 16px;
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   SUBSCRIBE FORM
+========================================== */
+
+.ant-newsletter-form {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: 560px;
+
+  min-height: 56px;
+
+  padding: 4px;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 100px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.ant-newsletter-form:focus-within {
+  border-color: #ff9b42;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 138, 25, 0.08);
+
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   EMAIL INPUT
+========================================== */
+
+.ant-newsletter-input {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 14px 22px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 100px;
+
+  background: transparent;
+
+  color: #202020;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 400;
+
+  box-shadow: none;
+}
+
+.ant-newsletter-input::placeholder {
+  color: #929292;
+
+  font-weight: 400;
+}
+
+.ant-newsletter-input:focus {
+  outline: none;
+
+  box-shadow: none;
+}
+
+
+/* ==========================================
+   SUBSCRIBE BUTTON
+========================================== */
+
+.ant-newsletter-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+
+  min-height: 48px;
+
+  padding: 12px 27px;
+
+  border: none;
+  border-radius: 100px;
+
+  background: linear-gradient(
+    110deg,
+    #ff961f 0%,
+    #ff790c 50%,
+    #f65b05 100%
+  );
+
+  background-size: 200% 100%;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    background-position 0.5s ease,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.ant-newsletter-button > span {
+  position: relative;
+
+  z-index: 1;
+}
+
+.ant-newsletter-button:hover:not(:disabled) {
+  background-position: 100% 0;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 20px rgba(245, 110, 15, 0.18);
+}
+
+.ant-newsletter-button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.ant-newsletter-button:disabled {
+  opacity: 0.65;
+
+  cursor: wait;
+}
+
+.ant-newsletter-button:focus-visible {
+  outline: 2px solid #b94e00;
+
+  outline-offset: 4px;
+}
+
+
+/* ==========================================
+   BUTTON ARROW ANIMATION
+========================================== */
+
+.ant-newsletter-arrow {
+  display: inline-block;
+
+  font-size: 22px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ant-newsletter-button:hover:not(:disabled)
+.ant-newsletter-arrow {
+  transform: translateX(5px);
+}
+
+
+/* ==========================================
+   BUTTON LIGHT SWEEP
+========================================== */
+
+.ant-newsletter-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-25deg);
+
+  transition: left 0.8s ease;
+
+  pointer-events: none;
+}
+
+.ant-newsletter-button:hover:not(:disabled)::before {
+  left: 150%;
+}
+
+
+/* ==========================================
+   SUBSCRIPTION STATUS
+========================================== */
+
+.ant-newsletter-status {
+  min-height: 20px;
+
+  margin-top: 12px;
+
+  color: #a65117;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* ==========================================
+   BOTTOM BACKGROUND WAVES
+========================================== */
+
+.ant-newsletter-waves {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: 135px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.ant-newsletter-wave {
+  position: absolute;
+
+  bottom: -2px;
+  left: -10%;
+
+  width: 120%;
+  height: 100%;
+
+  display: block;
+
+  will-change: transform;
+}
+
+
+/* ==========================================
+   SLOW CINEMATIC WAVE MOVEMENT
+========================================== */
+
+.ant-newsletter-wave-one {
+  opacity: 0.85;
+
+  animation:
+    antNewsletterWaveOne
+    14s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.ant-newsletter-wave-two {
+  opacity: 0.75;
+
+  animation:
+    antNewsletterWaveTwo
+    18s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes antNewsletterWaveOne {
+  0% {
+    transform: translate3d(-2%, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(2%, 7px, 0);
+  }
+
+  100% {
+    transform: translate3d(4%, 0, 0);
+  }
+}
+
+@keyframes antNewsletterWaveTwo {
+  0% {
+    transform: translate3d(3%, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-1%, 10px, 0);
+  }
+
+  100% {
+    transform: translate3d(-4%, 0, 0);
+  }
+}
+
+
+/* ==========================================
+   CINEMATIC SCROLL ENTRANCE
+========================================== */
+
+.newsletter-animation-ready
+.ant-newsletter-label,
+
+.newsletter-animation-ready
+.ant-newsletter-heading,
+
+.newsletter-animation-ready
+.ant-newsletter-description,
+
+.newsletter-animation-ready
+.ant-newsletter-form {
+  opacity: 0;
+
+  transform:
+    translate3d(0, 28px, -35px)
+    rotateX(6deg);
+}
+
+
+/* LABEL ENTRANCE */
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-label {
+  animation:
+    antNewsletterReveal
+    0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+
+/* HEADING ENTRANCE */
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-heading {
+  animation:
+    antNewsletterReveal
+    1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    100ms
+    both;
+}
+
+
+/* DESCRIPTION ENTRANCE */
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-description {
+  animation:
+    antNewsletterReveal
+    1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    220ms
+    both;
+}
+
+
+/* FORM ENTRANCE */
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-form {
+  animation:
+    antNewsletterReveal
+    1s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    350ms
+    backwards;
+}
+
+@keyframes antNewsletterReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translate3d(0, 28px, -35px)
+      rotateX(6deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0)
+      rotateX(0deg);
+  }
+}
+
+/* Keep the form visible after its entrance */
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-form {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ==========================================
+   WAVE SCROLL REVEAL
+========================================== */
+
+.newsletter-animation-ready
+.ant-newsletter-waves {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.newsletter-animation-ready.newsletter-visible
+.ant-newsletter-waves {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* ==========================================
+   KEYBOARD ACCESSIBILITY
+========================================== */
+
+.newsletter-animation-ready:focus-within
+.ant-newsletter-label,
+
+.newsletter-animation-ready:focus-within
+.ant-newsletter-heading,
+
+.newsletter-animation-ready:focus-within
+.ant-newsletter-description,
+
+.newsletter-animation-ready:focus-within
+.ant-newsletter-form {
+  opacity: 1;
+
+  transform: none;
+
+  animation: none;
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+
+  .ant-newsletter-section {
+    min-height: 390px;
+
+    padding: 75px 30px 100px;
+  }
+
+  .ant-newsletter-heading {
+    max-width: 850px;
+
+    font-size: 38px;
+
+    letter-spacing: -1.4px;
+  }
+
+  .ant-newsletter-description {
+    max-width: 650px;
+
+    font-size: 15px;
+  }
+
+  .ant-newsletter-waves {
+    height: 110px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .ant-newsletter-section {
+    min-height: auto;
+
+    padding: 65px 22px 95px;
+  }
+
+  .ant-newsletter-label {
+    margin-bottom: 16px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .ant-newsletter-heading {
+    margin-bottom: 18px;
+
+    font-size: clamp(28px, 6vw, 36px);
+
+    letter-spacing: -1.2px;
+
+    line-height: 1.2;
+  }
+
+  .ant-newsletter-mobile-break {
+    display: block;
+  }
+
+  .ant-newsletter-description {
+    margin-bottom: 26px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .ant-newsletter-form {
+    max-width: 480px;
+
+    min-height: 52px;
+  }
+
+  .ant-newsletter-input {
+    padding: 12px 15px;
+
+    font-size: 16px;
+  }
+
+  .ant-newsletter-button {
+    min-height: 44px;
+
+    padding: 10px 19px;
+
+    font-size: 13px;
+
+    gap: 8px;
+  }
+
+  .ant-newsletter-arrow {
+    font-size: 18px;
+  }
+
+  .ant-newsletter-waves {
+    height: 85px;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 420px) {
+
+  .ant-newsletter-form {
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+  }
+
+  .ant-newsletter-input {
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    border: 1px solid #d5d5d5;
+
+    background: #ffffff;
+  }
+
+  .ant-newsletter-input:focus {
+    border-color: #ff8a19;
+  }
+
+  .ant-newsletter-button {
+    width: 100%;
+
+    min-height: 48px;
+  }
+
+  .ant-newsletter-form:focus-within {
+    box-shadow: none;
+
+    transform: none;
+  }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ant-newsletter-section *,
+  .ant-newsletter-section *::before,
+  .ant-newsletter-section *::after {
+    animation: none !important;
+
+    transition: none !important;
+  }
+
+  .ant-newsletter-label,
+  .ant-newsletter-heading,
+  .ant-newsletter-description,
+  .ant-newsletter-form,
+  .ant-newsletter-waves {
+    opacity: 1 !important;
+
+    transform: none !important;
+  }
+
+}

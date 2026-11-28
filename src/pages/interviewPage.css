@@ -1,0 +1,2012 @@
+/* ========================================
+   BASE STYLES
+======================================== */
+
+.interview-page {
+  --interview-orange: #f58220;
+  --interview-orange-dark: #df6b13;
+  --interview-dark: #19283e;
+  --interview-muted: #606b7b;
+
+  background: #ffffff;
+  color: var(--interview-dark);
+  overflow: hidden;
+}
+
+.interview-page *,
+.interview-modal * {
+  box-sizing: border-box;
+}
+
+.interview-page button {
+  cursor: pointer;
+}
+
+.interview-eyebrow {
+  color: #db6a12;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+
+/* ========================================
+   FIRST SECTION — HERO LAYOUT
+======================================== */
+
+.interview-hero {
+  width: 100%;
+  max-width: 1380px;
+  min-height: 740px;
+
+  margin: 0 auto;
+  padding: 65px 40px 75px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  align-items: center;
+  gap: 65px;
+}
+
+.interview-hero-copy {
+  position: relative;
+  min-width: 0;
+  max-width: 600px;
+  z-index: 2;
+
+  animation: interviewCopyReveal 0.8s ease both;
+}
+
+.interview-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #5d6777;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+
+  margin-bottom: 22px;
+}
+
+.interview-status-dot {
+  display: inline-block;
+  flex-shrink: 0;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #f58220;
+
+  box-shadow: 0 0 0 5px #fff0e1;
+}
+
+
+/* ========================================
+   HERO HEADING
+======================================== */
+
+.interview-hero h1 {
+  font-size: clamp(34px, 3.1vw, 48px);
+  font-weight: 800;
+  line-height: 1.16;
+
+  letter-spacing: -0.045em;
+
+  color: #19283e;
+  margin: 0 0 22px;
+
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.interview-heading-accent {
+  display: block;
+
+  color: #ed781c;
+  margin-top: 5px;
+}
+
+.interview-hero-description {
+  max-width: 550px;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  color: #606b7b;
+  margin: 0;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.interview-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+  margin-top: 26px;
+}
+
+.interview-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-height: 50px;
+  padding: 14px 22px;
+
+  border: 1px solid #f58220;
+  border-radius: 7px;
+
+  background: #f58220;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.interview-primary:hover {
+  background: #df6b13;
+  border-color: #df6b13;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.interview-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.interview-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.interview-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 50px;
+  padding: 14px 19px;
+
+  border: 1px solid #dce1e8;
+  border-radius: 7px;
+
+  background: #ffffff;
+  color: #19283e;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.interview-secondary svg {
+  color: #ed781c;
+}
+
+.interview-secondary:hover {
+  background: #fff8f2;
+  border-color: #f58220;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   DELAYED HERO DETAILS
+======================================== */
+
+.interview-hero-details {
+  margin-top: 30px;
+  padding-top: 23px;
+
+  border-top: 1px solid #e8ebef;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    visibility 0.6s;
+}
+
+.interview-hero-details.details-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   HERO STATISTICS
+======================================== */
+
+.interview-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.interview-hero-stat {
+  position: relative;
+  min-width: 0;
+
+  padding-right: 14px;
+
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.interview-hero-stat:not(:last-child) {
+  border-right: 1px solid #e5e8ed;
+}
+
+.interview-hero-stat strong {
+  display: block;
+
+  color: #19283e;
+
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+
+  letter-spacing: -0.045em;
+  margin-bottom: 8px;
+}
+
+.interview-hero-stat p {
+  color: #697383;
+
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.65;
+
+  margin: 0;
+}
+
+.details-visible .interview-hero-stat {
+  animation: interviewDetailReveal 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+
+/* ========================================
+   HERO FEATURE LIST
+======================================== */
+
+.interview-hero-features {
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: 20px;
+  row-gap: 10px;
+
+  margin-top: 22px;
+}
+
+.interview-hero-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.interview-hero-feature svg {
+  flex-shrink: 0;
+  color: #ed781c;
+}
+
+.interview-hero-feature span {
+  color: #505d6d;
+
+  font-size: 11.5px;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.details-visible .interview-hero-feature {
+  animation: interviewDetailReveal 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes interviewDetailReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   RIGHT SIDE VIDEO
+======================================== */
+
+.interview-hero-media {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  height: 575px;
+
+  isolation: isolate;
+
+  animation: interviewMediaReveal 0.9s ease 0.1s both;
+}
+
+
+/* ========================================
+   ANIMATED VIDEO OUTLINE
+======================================== */
+
+.interview-video-outline {
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 5%;
+  right: 5%;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.interview-outline-svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+.interview-outline-base {
+  fill: none;
+
+  stroke: #ffd3ad;
+  stroke-width: 1.5;
+
+  vector-effect: non-scaling-stroke;
+}
+
+.interview-outline-motion {
+  fill: none;
+
+  stroke: #f58220;
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+
+  vector-effect: non-scaling-stroke;
+
+  animation: interviewDrawOutline 3.7s
+    cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes interviewDrawOutline {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0.6;
+  }
+
+  75% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+
+
+/* ========================================
+   VIDEO CONTAINER
+======================================== */
+
+.interview-video-container {
+  position: relative;
+  z-index: 1;
+
+  width: 57%;
+  height: 100%;
+
+  border-radius: 15px;
+  overflow: hidden;
+
+  background: #f0ece7;
+}
+
+.interview-hero-video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ========================================
+   FLOATING VIDEO CONTENT
+======================================== */
+
+.interview-scene {
+  position: absolute;
+  inset: 0;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   FLOATING TYPOGRAPHY
+======================================== */
+
+.interview-floating-text {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+  padding: 16px 20px;
+
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(25, 40, 62, 0.18);
+
+  text-align: center;
+}
+
+.interview-floating-text strong {
+  display: block;
+
+  font-size: clamp(42px, 4.3vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  color: #ed781c;
+}
+
+.interview-floating-text span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #19283e;
+
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.5;
+
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   FIRST SCENE LAYOUT
+======================================== */
+
+.layout-one .interview-text-first {
+  bottom: 17%;
+  left: -1%;
+}
+
+.layout-one .interview-text-second {
+  top: 20%;
+  right: -1%;
+}
+
+
+/* ========================================
+   SECOND SCENE LAYOUT
+======================================== */
+
+.layout-two .interview-text-first {
+  top: 20%;
+  left: -1%;
+}
+
+.layout-two .interview-text-second {
+  bottom: 17%;
+  right: -1%;
+}
+
+
+/* ========================================
+   FLOATING CONTENT ANIMATIONS
+======================================== */
+
+.scene-enter .interview-floating-text {
+  animation: interviewFloatingEnter 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.scene-enter .interview-text-first {
+  animation-delay: 0.18s;
+}
+
+.scene-enter .interview-text-second {
+  animation-delay: 0.28s;
+}
+
+@keyframes interviewFloatingEnter {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scene-exit .interview-floating-text {
+  animation: interviewFloatingExit 0.35s ease both;
+}
+
+@keyframes interviewFloatingExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+/* ========================================
+   HERO ENTRANCE ANIMATIONS
+======================================== */
+
+@keyframes interviewCopyReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes interviewMediaReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   SECOND SECTION — PLATFORM FEATURES
+======================================== */
+
+.interview-platform-features {
+  width: 100%;
+  background: #ffffff;
+
+  padding: 65px 30px 90px;
+}
+
+
+/* ========================================
+   PLATFORM FEATURES HEADING
+======================================== */
+
+.platform-features-heading {
+  max-width: 1050px;
+
+  margin: 0 auto 46px;
+
+  text-align: center;
+}
+
+.platform-features-label {
+  display: block;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+
+  letter-spacing: -0.035em;
+
+  color: #111111;
+
+  margin-bottom: 20px;
+}
+
+.platform-features-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 400;
+  line-height: 1.25;
+
+  letter-spacing: -0.035em;
+
+  color: #111111;
+
+  margin: 0 0 24px;
+}
+
+.platform-features-heading p {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  color: #555555;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   PLATFORM FEATURES GRID
+======================================== */
+
+.platform-features-grid {
+  width: 100%;
+  max-width: 1160px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ========================================
+   COMMON FEATURE CARD
+======================================== */
+
+.platform-feature-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-width: 0;
+  min-height: 330px;
+
+  padding: 22px 28px 12px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  color: #ffffff;
+
+  transition: transform 0.35s ease;
+}
+
+.platform-feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.platform-feature-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -25px;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   BOX 1 — PREPARE BY COMPANY & ROLE
+
+   ORIGINAL WARM ORANGE GRADIENT
+======================================== */
+
+.platform-card-prepare {
+  background: #56533d;
+}
+
+.platform-card-prepare::before {
+  background:
+    radial-gradient(
+      ellipse at 30% 5%,
+      #df8b3b 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 10% 75%,
+      #ff941e 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      #ed8d26 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 55% 100%,
+      #bf782b 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #79613c,
+      #3e4638 70%
+    );
+
+  filter: blur(13px);
+}
+
+
+/* ========================================
+   BOX 2 — INTERVIEW STUDIO
+
+   NEW WHITE + ORANGE + PEACH GRADIENT
+======================================== */
+
+.platform-card-interview {
+  background: #f9e5d2;
+}
+
+.platform-card-interview::before {
+  background:
+    radial-gradient(
+      ellipse at 5% 5%,
+      #ffffff 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 90% 10%,
+      #ffe3c8 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 95% 90%,
+      #ed9b51 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 10% 100%,
+      #f8bb83 0%,
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #fff8f1 0%,
+      #f8d5b5 55%,
+      #eea567 100%
+    );
+
+  filter: blur(15px);
+}
+
+
+/* ========================================
+   BOX 3 — PROBLEMS WORKSPACE
+
+   NEW WHITE + CREAM + LIGHT ORANGE
+======================================== */
+
+.platform-card-problems {
+  background: #fff1e3;
+}
+
+.platform-card-problems::before {
+  background:
+    radial-gradient(
+      ellipse at 15% 5%,
+      #ffffff 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 90% 20%,
+      #fff8f0 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 15% 95%,
+      #f6c494 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 90% 95%,
+      #edaa70 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      160deg,
+      #ffffff 0%,
+      #fff1e3 45%,
+      #f4bd8b 100%
+    );
+
+  filter: blur(14px);
+}
+
+
+/* ========================================
+   BOX 4 — INTERNLAB + DYNAMIC PORTFOLIO
+
+   ORIGINAL WARM ORANGE GRADIENT
+======================================== */
+
+.platform-card-portfolio {
+  background: #69653c;
+}
+
+.platform-card-portfolio::before {
+  background:
+    radial-gradient(
+      ellipse at 45% 0%,
+      #c47d35 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 65% 45%,
+      #ef8b25 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      ellipse at 5% 75%,
+      #f49832 0%,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 90% 80%,
+      #c9a45f 0%,
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #6d6539,
+      #526039 65%,
+      #605239
+    );
+
+  filter: blur(14px);
+}
+
+
+/* ========================================
+   FEATURE CARD TITLE AND DESCRIPTION
+======================================== */
+
+.platform-card-content {
+  position: relative;
+
+  z-index: 1;
+
+  padding: 0 5px;
+
+  margin-bottom: 16px;
+}
+
+.platform-card-content h3 {
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 650;
+  line-height: 1.25;
+
+  letter-spacing: -0.035em;
+
+  margin: 0 0 9px;
+}
+
+.platform-card-content p {
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  margin: 0;
+}
+
+
+/* ========================================
+   DARK TEXT FOR BOX 2 AND BOX 3
+======================================== */
+
+.platform-card-interview .platform-card-content h3,
+.platform-card-problems .platform-card-content h3 {
+  color: #30241c;
+}
+
+.platform-card-interview .platform-card-content p,
+.platform-card-problems .platform-card-content p {
+  color: #58463a;
+}
+
+
+/* ========================================
+   WHITE INNER PANEL
+======================================== */
+
+.platform-card-panel {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  padding: 15px 25px 20px;
+
+  background: #fcfcfc;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 17px;
+
+  color: #111111;
+}
+
+.platform-card-panel h4 {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  letter-spacing: -0.025em;
+
+  color: #111111;
+
+  margin: 0 0 8px;
+}
+
+
+/* ========================================
+   INNER PANEL CONTENT ROWS
+======================================== */
+
+.platform-panel-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.platform-panel-list > div {
+  display: flex;
+  align-items: center;
+
+  min-height: 32px;
+
+  padding: 6px 20px;
+
+  background: #efefef;
+
+  border-radius: 7px;
+
+  color: #161616;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  transition: background 0.25s ease;
+}
+
+.platform-panel-list > div:hover {
+  background: #e5e5e5;
+}
+
+
+/* ========================================
+   LIGHT CARD PANEL BORDERS
+======================================== */
+
+.platform-card-interview .platform-card-panel,
+.platform-card-problems .platform-card-panel {
+  border: 1px solid rgba(173, 108, 57, 0.12);
+}
+
+
+/* ========================================
+   EXISTING PREPARATION SECTION
+======================================== */
+
+.interview-steps {
+  background: #ffffff;
+
+  padding: 90px 30px 110px;
+}
+
+.interview-section-heading {
+  max-width: 650px;
+
+  margin: 0 auto 46px;
+
+  text-align: center;
+}
+
+.interview-section-heading h2,
+.interview-final-cta h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.5rem);
+  line-height: 1.16;
+
+  letter-spacing: -0.04em;
+  font-weight: 800;
+
+  margin: 15px 0;
+}
+
+.interview-step-grid {
+  max-width: 1180px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.interview-step-grid article {
+  border: 1px solid #f1e1d2;
+  background: #fffcf9;
+
+  border-radius: 20px;
+
+  padding: 32px;
+  min-height: 270px;
+}
+
+.interview-step-grid svg {
+  color: #ed7a1c;
+
+  width: 36px;
+  height: 36px;
+}
+
+.interview-step-grid span {
+  display: block;
+
+  color: #df741c;
+
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+
+  margin-top: 30px;
+}
+
+.interview-step-grid h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+
+  margin: 10px 0;
+}
+
+.interview-step-grid p {
+  color: #647180;
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   FINAL CTA SECTION
+======================================== */
+
+.interview-final-cta {
+  max-width: 1180px;
+
+  margin: 95px auto;
+  padding: 55px 65px;
+
+  border-radius: 24px;
+  background: #fff0df;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.interview-final-cta h2 {
+  max-width: 600px;
+
+  margin-bottom: 0;
+}
+
+
+/* ========================================
+   LMS MODAL
+======================================== */
+
+.interview-modal-backdrop {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  background: #111827a8;
+
+  display: grid;
+  place-items: center;
+
+  padding: 18px;
+}
+
+.interview-modal {
+  position: relative;
+
+  width: min(100%, 560px);
+  max-height: min(92vh, 900px);
+
+  overflow-y: auto;
+
+  background: #ffffff;
+  color: #19283e;
+
+  border-radius: 24px;
+
+  box-shadow: 0 30px 80px #11182755;
+}
+
+.interview-modal-close {
+  position: absolute;
+
+  right: 20px;
+  top: 20px;
+
+  border: 0;
+  background: transparent;
+  color: #657181;
+
+  padding: 6px;
+  cursor: pointer;
+}
+
+.interview-modal-head {
+  padding: 35px 36px 26px;
+
+  border-bottom: 1px solid #eadfd4;
+}
+
+.interview-modal-head h2 {
+  font-size: 2rem;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+
+  margin: 7px 0 3px;
+}
+
+.interview-modal-head p {
+  color: #697688;
+
+  margin-bottom: 20px;
+}
+
+.interview-login-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  background: #f58220;
+  color: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.interview-login-link:hover {
+  background: #d9670b;
+}
+
+.interview-modal-form {
+  padding: 25px 36px 36px;
+}
+
+.interview-modal-form fieldset {
+  border: 0;
+
+  margin: 0 0 26px;
+  padding: 0;
+}
+
+.interview-modal-form legend {
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  color: #697688;
+
+  letter-spacing: 0.14em;
+  margin-bottom: 13px;
+}
+
+
+/* ========================================
+   PLAN AND PAYMENT OPTIONS
+======================================== */
+
+.interview-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.interview-options label {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+  min-height: 91px;
+
+  border: 2px solid #e3e7ed;
+  background: #fafbfc;
+
+  border-radius: 15px;
+  padding: 15px 17px;
+
+  cursor: pointer;
+}
+
+.interview-options label.selected {
+  border-color: #f58220;
+  background: #fff7ef;
+}
+
+.interview-options label:focus-within {
+  outline: 2px solid #f58220;
+  outline-offset: 3px;
+}
+
+.interview-options input {
+  position: absolute;
+  opacity: 0;
+}
+
+.interview-options strong {
+  font-weight: 800;
+}
+
+.interview-options b {
+  color: #ec7818;
+  font-size: 1.2rem;
+}
+
+.interview-options small {
+  color: #758194;
+}
+
+.interview-options svg {
+  position: absolute;
+
+  top: 13px;
+  right: 13px;
+
+  color: #f58220;
+}
+
+
+/* ========================================
+   REGISTRATION FIELDS
+======================================== */
+
+.interview-fields {
+  display: grid;
+
+  gap: 11px;
+}
+
+.interview-fields > input,
+.interview-phone {
+  width: 100%;
+  height: 51px;
+
+  border: 1.5px solid #dce3ec;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  padding: 0 17px;
+  outline-color: #f58220;
+}
+
+.interview-fields input::placeholder {
+  color: #9ca8b8;
+}
+
+.interview-phone {
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+}
+
+.interview-phone span {
+  padding: 0 13px;
+
+  border-right: 1px solid #dce3ec;
+
+  white-space: nowrap;
+  color: #697688;
+}
+
+.interview-phone input {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  background: transparent;
+
+  padding: 0 14px;
+  outline: 0;
+}
+
+.interview-phone:focus-within {
+  border-color: #f58220;
+}
+
+.interview-submit {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+.interview-form-message {
+  color: #9b4a0f;
+  background: #fff4e8;
+
+  border-radius: 10px;
+
+  padding: 12px;
+  margin-top: 14px;
+
+  font-size: 0.85rem;
+}
+
+
+/* ========================================
+   LAPTOP RESPONSIVE
+======================================== */
+
+@media (max-width: 1200px) {
+
+  .interview-hero {
+    min-height: 690px;
+
+    padding: 55px 30px 65px;
+    gap: 35px;
+  }
+
+  .interview-hero h1 {
+    font-size: clamp(32px, 3.5vw, 42px);
+  }
+
+  .interview-hero-media {
+    height: 540px;
+  }
+
+  .interview-hero-stat strong {
+    font-size: 23px;
+  }
+
+  .interview-hero-stats {
+    gap: 12px;
+  }
+
+  .interview-hero-stat {
+    padding-right: 10px;
+  }
+
+  .interview-hero-stat p {
+    font-size: 11px;
+  }
+
+  .interview-floating-text strong {
+    font-size: 52px;
+  }
+
+  .interview-floating-text span {
+    font-size: 9px;
+  }
+
+  /* SECOND SECTION */
+
+  .interview-platform-features {
+    padding: 60px 35px 80px;
+  }
+
+  .platform-features-grid {
+    gap: 18px;
+  }
+
+  .platform-feature-card {
+    padding: 22px 22px 14px;
+    min-height: 320px;
+  }
+
+  .platform-card-content h3 {
+    font-size: 23px;
+  }
+
+  .platform-card-content p {
+    font-size: 15px;
+  }
+
+  .platform-card-panel {
+    padding: 15px 20px 18px;
+  }
+
+  .platform-panel-list > div {
+    font-size: 14px;
+    padding: 7px 15px;
+  }
+
+  .interview-final-cta {
+    margin: 60px 30px;
+  }
+
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .interview-hero {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 55px 30px 70px;
+  }
+
+  .interview-hero-copy {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+  }
+
+  .interview-hero h1 {
+    font-size: clamp(36px, 5.5vw, 48px);
+  }
+
+  .interview-hero-description {
+    max-width: 580px;
+  }
+
+  .interview-hero-media {
+    width: 100%;
+    max-width: 620px;
+    height: 530px;
+
+    margin: auto;
+  }
+
+  .interview-hero-stat strong {
+    font-size: 26px;
+  }
+
+  .interview-hero-stat p {
+    font-size: 12px;
+  }
+
+  /* SECOND SECTION */
+
+  .interview-platform-features {
+    padding: 50px 24px 70px;
+  }
+
+  .platform-features-heading {
+    margin-bottom: 35px;
+  }
+
+  .platform-features-heading p {
+    font-size: 15px;
+  }
+
+  .platform-features-grid {
+    gap: 16px;
+  }
+
+  .platform-feature-card {
+    padding: 20px 18px 12px;
+    min-height: 345px;
+  }
+
+  .platform-card-content {
+    padding: 0 2px;
+  }
+
+  .platform-card-content h3 {
+    font-size: 21px;
+  }
+
+  .platform-card-content p {
+    font-size: 14px;
+  }
+
+  .platform-card-panel {
+    padding: 14px;
+  }
+
+  .platform-card-panel h4 {
+    font-size: 16px;
+  }
+
+  .platform-panel-list > div {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .interview-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interview-steps {
+    padding: 65px 24px;
+  }
+
+  .interview-final-cta {
+    margin: 50px 24px;
+    padding: 35px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+
+/* ========================================
+   PLATFORM FEATURES MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .interview-platform-features {
+    padding: 45px 20px 60px;
+  }
+
+  .platform-features-label {
+    font-size: 30px;
+
+    margin-bottom: 15px;
+  }
+
+  .platform-features-heading h2 {
+    font-size: 29px;
+    line-height: 1.25;
+
+    margin-bottom: 18px;
+  }
+
+  .platform-features-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .platform-features-grid {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 18px;
+  }
+
+  .platform-feature-card {
+    min-height: 310px;
+
+    padding: 22px 18px 14px;
+
+    border-radius: 17px;
+  }
+
+  .platform-card-content {
+    margin-bottom: 20px;
+  }
+
+  .platform-card-content h3 {
+    font-size: 23px;
+  }
+
+  .platform-card-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .platform-card-panel {
+    padding: 15px;
+
+    border-radius: 13px;
+  }
+
+  .platform-card-panel h4 {
+    font-size: 17px;
+  }
+
+  .platform-panel-list > div {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+}
+
+
+/* ========================================
+   HERO MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 520px) {
+
+  .interview-hero {
+    padding: 40px 20px 60px;
+
+    gap: 35px;
+  }
+
+  .interview-hero-eyebrow {
+    font-size: 11px;
+
+    margin-bottom: 20px;
+  }
+
+  .interview-hero h1 {
+    font-size: clamp(29px, 7.8vw, 36px);
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+  }
+
+  .interview-heading-accent {
+    margin-top: 5px;
+  }
+
+  .interview-hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .interview-actions {
+    gap: 10px;
+
+    margin-top: 24px;
+  }
+
+  .interview-actions .interview-primary,
+  .interview-actions .interview-secondary {
+    width: 100%;
+
+    font-size: 13px;
+  }
+
+  .interview-hero-details {
+    margin-top: 25px;
+    padding-top: 20px;
+  }
+
+  .interview-hero-stats {
+    gap: 10px;
+  }
+
+  .interview-hero-stat {
+    padding-right: 8px;
+  }
+
+  .interview-hero-stat strong {
+    font-size: 20px;
+
+    margin-bottom: 7px;
+  }
+
+  .interview-hero-stat p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .interview-hero-features {
+    flex-direction: column;
+
+    gap: 9px;
+    margin-top: 20px;
+  }
+
+  .interview-hero-feature span {
+    font-size: 12px;
+  }
+
+  .interview-hero-media {
+    height: 400px;
+  }
+
+  .interview-video-container {
+    width: 60%;
+
+    border-radius: 12px;
+  }
+
+  .interview-video-outline {
+    left: 3%;
+    right: 3%;
+  }
+
+  .interview-floating-text {
+    min-width: 100px;
+    padding: 12px;
+  }
+
+  .interview-floating-text strong {
+    font-size: 36px;
+  }
+
+  .interview-floating-text span {
+    font-size: 7px;
+
+    margin-top: 6px;
+  }
+
+  .interview-modal-head,
+  .interview-modal-form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .interview-options label {
+    padding: 12px;
+
+    font-size: 0.85rem;
+  }
+
+  .interview-options b {
+    font-size: 1rem;
+  }
+
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.interview-page a:focus-visible,
+.interview-page button:focus-visible,
+.interview-modal button:focus-visible,
+.interview-modal a:focus-visible {
+  outline: 2px solid #f58220;
+
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .interview-hero-copy,
+  .interview-hero-media,
+  .interview-outline-motion,
+  .scene-enter .interview-floating-text,
+  .scene-exit .interview-floating-text {
+    animation: none;
+  }
+
+  .interview-outline-motion {
+    stroke-dashoffset: 0;
+  }
+
+  .interview-hero-details,
+  .interview-hero-stat,
+  .interview-hero-feature,
+  .details-visible .interview-hero-stat,
+  .details-visible .interview-hero-feature {
+    animation: none;
+    transition: none;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .interview-primary,
+  .interview-secondary,
+  .interview-primary svg,
+  .platform-feature-card,
+  .platform-panel-list > div {
+    transition: none;
+  }
+
+  .platform-feature-card:hover {
+    transform: none;
+  }
+
+}
+/* ========================================
+   BOX 1 — MUTED ORANGE + WARM BEIGE
+======================================== */
+
+.platform-card-prepare {
+  background: #e7c3a1;
+}
+
+.platform-card-prepare::before {
+  background:
+    radial-gradient(
+      ellipse at 15% 10%,
+      #f6e1cc 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 90% 15%,
+      #d4a579 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 10% 95%,
+      #e6b17f 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 90% 90%,
+      #edc49e 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #efd5bb 0%,
+      #d4a579 55%,
+      #e7bc94 100%
+    );
+
+  filter: blur(15px);
+}
+
+
+/* ========================================
+   BOX 4 — SOFT CARAMEL + PASTEL ORANGE
+======================================== */
+
+.platform-card-portfolio {
+  background: #e8c9ac;
+}
+
+.platform-card-portfolio::before {
+  background:
+    radial-gradient(
+      ellipse at 10% 5%,
+      #f5e4d3 0%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 15%,
+      #d8ad86 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 15% 95%,
+      #e9bf98 0%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 90% 85%,
+      #e1b38b 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      145deg,
+      #f0d9c3 0%,
+      #d8ad86 55%,
+      #e9bf98 100%
+    );
+
+  filter: blur(15px);
+}
+
+
+/* ========================================
+   DARK TEXT FOR BETTER READABILITY
+======================================== */
+
+.platform-card-prepare .platform-card-content h3,
+.platform-card-portfolio .platform-card-content h3 {
+  color: #30241c;
+}
+
+.platform-card-prepare .platform-card-content p,
+.platform-card-portfolio .platform-card-content p {
+  color: #58463a;
+}
+
+
+/* ========================================
+   SUBTLE INNER PANEL BORDER
+======================================== */
+
+.platform-card-prepare .platform-card-panel,
+.platform-card-portfolio .platform-card-panel {
+  border: 1px solid rgba(173, 108, 57, 0.12);
+}

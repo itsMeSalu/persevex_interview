@@ -1,0 +1,691 @@
+/* ========================================
+   PLATFORM FEATURES
+======================================== */
+
+.apf-section {
+  --apf-orange: #ed8b35;
+  --apf-dark: #252525;
+  --apf-muted: #70675f;
+
+  width: 100%;
+  padding: 55px 30px 60px;
+
+  background: #ffffff;
+  color: var(--apf-dark);
+
+  font-family: inherit;
+  overflow: hidden;
+}
+
+.apf-section *,
+.apf-section *::before,
+.apf-section *::after {
+  box-sizing: border-box;
+}
+
+.apf-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.apf-header {
+  max-width: 850px;
+
+  margin: 0 auto 28px;
+
+  text-align: center;
+}
+
+.apf-label {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #b96320;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.apf-header h2 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 400;
+
+  line-height: 1.2;
+  letter-spacing: -1px;
+
+  color: var(--apf-dark);
+}
+
+.apf-header p {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: var(--apf-muted);
+}
+
+
+/* ========================================
+   TWO COLUMN GRID
+======================================== */
+
+.apf-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap: 16px;
+}
+
+.apf-card-wrapper {
+  display: flex;
+
+  min-width: 0;
+
+  perspective: 1400px;
+}
+
+
+/* ========================================
+   COMPACT FEATURE CARDS
+======================================== */
+
+.apf-card {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 210px;
+
+  padding: 18px;
+
+  border: 1px solid #eddfd2;
+  border-radius: 14px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* ========================================
+   SOFT ORANGE AND WHITE COLORS
+======================================== */
+
+.apf-card.prepare-card,
+.apf-card.portfolio-card {
+  background: linear-gradient(
+    145deg,
+    #fff5e9 0%,
+    #f8ddbd 100%
+  );
+}
+
+.apf-card.interview-card,
+.apf-card.problems-card {
+  background: linear-gradient(
+    145deg,
+    #faf9f7 0%,
+    #f3ede5 100%
+  );
+}
+
+
+/* ========================================
+   CURSOR FOLLOWING LIGHT
+======================================== */
+
+.apf-card-light {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background: radial-gradient(
+    240px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.65),
+    transparent 75%
+  );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.apf-card-header {
+  position: relative;
+
+  margin-bottom: 13px;
+}
+
+.apf-card-header h3 {
+  margin: 0 0 6px;
+
+  color: #29231e;
+
+  font-family: inherit;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  line-height: 1.35;
+  letter-spacing: -0.4px;
+}
+
+.apf-card-header p {
+  margin: 0;
+
+  color: #70645a;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   INNER WHITE PANEL
+======================================== */
+
+.apf-panel {
+  position: relative;
+
+  width: 100%;
+
+  margin-top: auto;
+  padding: 11px 13px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(174, 125, 79, 0.12);
+  border-radius: 9px;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.apf-panel h4 {
+  margin: 0 0 5px;
+
+  color: #302820;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* ========================================
+   INNER CONTENT
+======================================== */
+
+.apf-list {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.apf-list li {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 28px;
+
+  padding: 6px 0;
+
+  color: #60564e;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  line-height: 1.4;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.apf-list li:not(:last-child) {
+  border-bottom: 1px solid #f0e9e2;
+}
+
+.apf-dot {
+  display: inline-block;
+
+  flex-shrink: 0;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #e99a50;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* ========================================
+   PROFESSIONAL CARD HOVER
+======================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .apf-card-wrapper:hover .apf-card {
+    transform:
+      translateY(-5px)
+      rotateX(var(--rotate-x))
+      rotateY(var(--rotate-y));
+
+    border-color: #e5b88f;
+
+    box-shadow:
+      0 12px 28px rgba(115, 73, 34, 0.08);
+  }
+
+  .apf-card-wrapper:hover .apf-card-light {
+    opacity: 1;
+  }
+
+  .apf-card-wrapper:hover .apf-panel {
+    transform: translateY(-2px);
+
+    background: #ffffff;
+  }
+
+  .apf-list li:hover {
+    color: #b96320;
+
+    padding-left: 4px;
+  }
+
+  .apf-list li:hover .apf-dot {
+    transform: scale(1.3);
+  }
+
+}
+
+
+/* ========================================
+   ANIMATED CARD BORDER
+======================================== */
+
+.apf-card::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ed8b35,
+    transparent
+  );
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+}
+
+.apf-card-wrapper:hover .apf-card::after {
+  transform: scaleX(1);
+}
+
+
+/* ========================================
+   INITIAL ANIMATION STATE
+======================================== */
+
+.apf-animation-ready .apf-header {
+  opacity: 0;
+
+  transform: translateY(22px);
+}
+
+.apf-animation-ready .apf-card-wrapper {
+  opacity: 0;
+
+  transform:
+    translate3d(0, 35px, -40px)
+    rotateX(7deg);
+}
+
+.apf-animation-ready .apf-panel {
+  opacity: 0;
+
+  translate: 0 12px;
+}
+
+.apf-animation-ready .apf-list li {
+  opacity: 0;
+
+  translate: -8px 0;
+}
+
+
+/* ========================================
+   HEADING SCROLL REVEAL
+======================================== */
+
+.apf-animation-ready.apf-visible .apf-header {
+  animation:
+    apfHeadingReveal
+    0.85s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    both;
+}
+
+@keyframes apfHeadingReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* ========================================
+   CINEMATIC STAGGERED CARD ENTRANCE
+======================================== */
+
+.apf-animation-ready.apf-visible
+.apf-card-wrapper {
+  animation:
+    apfCardReveal
+    0.95s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    calc(120ms + var(--card-delay))
+    both;
+}
+
+@keyframes apfCardReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      perspective(1400px)
+      translate3d(0, 35px, -40px)
+      rotateX(7deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+
+/* ========================================
+   INNER PANEL REVEAL
+======================================== */
+
+.apf-animation-ready.apf-visible .apf-panel {
+  animation:
+    apfPanelReveal
+    0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    calc(350ms + var(--card-delay))
+    both;
+}
+
+@keyframes apfPanelReveal {
+  from {
+    opacity: 0;
+
+    translate: 0 12px;
+  }
+
+  to {
+    opacity: 1;
+
+    translate: 0 0;
+  }
+}
+
+
+/* ========================================
+   STAGGERED INNER CONTENT REVEAL
+======================================== */
+
+.apf-animation-ready.apf-visible .apf-list li {
+  animation:
+    apfItemReveal
+    0.55s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    calc(
+      450ms +
+      var(--card-delay) +
+      var(--item-delay)
+    )
+    both;
+}
+
+@keyframes apfItemReveal {
+  from {
+    opacity: 0;
+
+    translate: -8px 0;
+  }
+
+  to {
+    opacity: 1;
+
+    translate: 0 0;
+  }
+}
+
+
+/* ========================================
+   LAPTOP RESPONSIVE
+======================================== */
+
+@media (min-width: 901px) and (max-height: 800px) {
+
+  .apf-section {
+    padding: 35px 30px 40px;
+  }
+
+  .apf-header {
+    margin-bottom: 22px;
+  }
+
+  .apf-header h2 {
+    font-size: 32px;
+  }
+
+  .apf-card {
+    min-height: 195px;
+
+    padding: 16px;
+  }
+
+  .apf-grid {
+    gap: 14px;
+  }
+
+}
+
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .apf-section {
+    padding: 45px 24px 50px;
+  }
+
+  .apf-grid {
+    gap: 14px;
+  }
+
+  .apf-card {
+    min-height: 210px;
+
+    padding: 16px;
+  }
+
+  .apf-card-header h3 {
+    font-size: 17px;
+  }
+
+  .apf-card-header p {
+    font-size: 12px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .apf-section {
+    padding: 40px 18px 45px;
+  }
+
+  .apf-header {
+    margin-bottom: 24px;
+  }
+
+  .apf-header h2 {
+    font-size: 29px;
+
+    line-height: 1.2;
+  }
+
+  .apf-header p {
+    font-size: 13px;
+  }
+
+  .apf-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .apf-card {
+    min-height: auto;
+
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+  .apf-card-header h3 {
+    font-size: 18px;
+  }
+
+  .apf-card-header p {
+    font-size: 13px;
+  }
+
+  .apf-panel {
+    padding: 12px;
+  }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .apf-section *,
+  .apf-section *::before,
+  .apf-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .apf-section .apf-header,
+  .apf-section .apf-card-wrapper,
+  .apf-section .apf-card,
+  .apf-section .apf-panel,
+  .apf-section .apf-list li {
+    opacity: 1 !important;
+
+    transform: none !important;
+    translate: none !important;
+  }
+
+  .apf-card-light {
+    display: none;
+  }
+
+}

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+.campus-ambassador-page {
+  font-family: var(--font-campus-inter), Inter, sans-serif;
+}
+
+.campus-ambassador-page > section :is(h1, h2, h3, h4) {
+  font-family: inherit;
+}
+
+.campus-ambassador-page > section:not(.amb-application-section):not(.stripe-animation-section) :is(h1, h2, h3, h4) {
+  font-weight: revert-layer;
+  letter-spacing: revert-layer;
+}
+
+.campus-ambassador-page #apply,
+.campus-ambassador-page #benefits {
+  scroll-margin-top: 110px;
+}
+
+.campus-ambassador-page .amb-home-link {
+  display: block;
+  margin: 18px 0;
+  color: #fa7405;
+  text-decoration: underline;
+}
+
+.campus-ambassador-page :focus-visible {
+  outline: 2px solid #fa7405;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  /* Avoid animated text blur repainting large mobile layers on scroll. */
+  .campus-ambassador-page :is(h1, h2, p) { filter: none !important; }
+}
